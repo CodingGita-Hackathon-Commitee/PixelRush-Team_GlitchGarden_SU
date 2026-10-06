@@ -1,0 +1,1001 @@
+/* ==========================================================================
+   CalmWait - My Progress & Patient Journey - Stylesheet
+   ========================================================================== */
+
+
+/* Base Reset & Typography */
+body.page-progress {
+  background-color: #f4f7fa;
+  color: #1d2939;
+  min-height: 100vh;
+  line-height: 1.45;
+}
+
+
+
+/* ==========================================================================
+   Progress Hero Header
+   ========================================================================== */
+.progress-hero-header {
+  padding: 16px 28px 10px 28px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.engine-tag {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #106368;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hero-left h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #101828;
+  letter-spacing: -0.4px;
+}
+
+.hero-subtext {
+  font-size: 11.5px;
+  color: #667085;
+}
+
+.hero-status-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-meta-pill {
+  background: #ebf3f7;
+  border: 1px solid #c9dfe8;
+  color: #344054;
+  padding: 5px 10px;
+  border-radius: 9999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.status-meta-pill.blue {
+  background: #e5f3f7;
+  color: #0d5155;
+  border-color: #badce5;
+}
+
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #106368;
+}
+
+.btn-refresh-sm {
+  border: 1px solid #badce5;
+  background: #f0f7fb;
+  color: #0d5155;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-refresh-sm:hover {
+  background: #deeff5;
+  border-color: #167e84;
+}
+
+/* ==========================================================================
+   Patient Identity Strip
+   ========================================================================== */
+.patient-id-strip {
+  margin: 6px 28px 14px 28px;
+  background: #ffffff;
+  border: 1.5px solid #cae3ee;
+  border-radius: 10px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.patient-token-box {
+  background: #106368;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: baseline;
+  box-shadow: 0 2px 6px rgba(16, 99, 104, 0.25);
+}
+
+.token-prefix {
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.token-number {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.id-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.id-meta-lbl {
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #98a2b3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.id-meta-item strong {
+  font-size: 12.5px;
+  color: #101828;
+}
+
+.id-meta-item small {
+  font-size: 9.5px;
+  color: #667085;
+}
+
+.highlight-physician {
+  color: #0d5155;
+}
+
+.id-meta-item.call-estimate {
+  text-align: right;
+}
+
+.call-time {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0d5155;
+}
+
+/* ==========================================================================
+   6-Stage Stepper Bar
+   ========================================================================== */
+.stepper-section {
+  margin: 0 28px 16px 28px;
+  background: #ffffff;
+  border: 1px solid #e4edf3;
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+
+.stepper-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.stepper-track-bg {
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background: #e2ecf2;
+  z-index: 1;
+}
+
+.step-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.step-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #d0d5dd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #98a2b3;
+  margin-bottom: 6px;
+}
+
+.step-node.completed .step-circle {
+  background: #106368;
+  border-color: #106368;
+  color: #ffffff;
+}
+
+.step-node.active .step-circle {
+  background: #106368;
+  border-color: #106368;
+  color: #ffffff;
+  box-shadow: 0 0 0 4px #d6eef2;
+}
+
+.step-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: #344054;
+}
+
+.step-node.active .step-title {
+  color: #0d5155;
+}
+
+.step-detail {
+  font-size: 9px;
+  color: #98a2b3;
+  margin-top: 1px;
+}
+
+.step-pill {
+  background: #e0f2f5;
+  color: #0d5155;
+  font-size: 8.5px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 2px;
+}
+
+.step-title-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mini-tag {
+  font-size: 7.5px;
+  font-weight: 800;
+  background: #eef2f5;
+  color: #667085;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   2-Column Clinical Layout
+   ========================================================================== */
+.progress-columns-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 20px;
+  padding: 0 28px 32px 28px;
+  align-items: start;
+}
+
+.col-left, .col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e4edf3;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.04), 0 1px 2px rgba(16, 24, 40, 0.02);
+}
+
+/* ==========================================================================
+   Current Phase Card (Left Column)
+   ========================================================================== */
+.phase-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.badge-tag-dark {
+  background: #0d5155;
+  color: #fff;
+  font-size: 8.5px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.phase-current-badge h4 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #101828;
+  margin-top: 3px;
+}
+
+.ambient-pill {
+  background: #f0f7fb;
+  border: 1px solid #d0e4ef;
+  color: #475467;
+  font-size: 9.5px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.wait-range-block {
+  margin-bottom: 14px;
+}
+
+.wait-range-lbl {
+  font-size: 9px;
+  font-weight: 800;
+  color: #98a2b3;
+  letter-spacing: 0.6px;
+}
+
+.wait-time-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 1px 0;
+}
+
+.wait-time-row h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #101828;
+  letter-spacing: -1px;
+}
+
+.wait-mins {
+  font-size: 14px;
+  font-weight: 700;
+  color: #667085;
+}
+
+.wait-range-note {
+  font-size: 10.5px;
+  color: #667085;
+  line-height: 1.4;
+}
+
+.live-status-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.feed-mini-box {
+  background: #f8fbfe;
+  border: 1px solid #dbe8f2;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.feed-mini-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #106368;
+  letter-spacing: 0.5px;
+}
+
+.feed-mini-box strong {
+  font-size: 12px;
+  color: #101828;
+}
+
+.feed-mini-box small {
+  font-size: 9.5px;
+  color: #667085;
+}
+
+.phase-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.btn-fresh-air {
+  background: #106368;
+  color: #fff;
+  padding: 9px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 6px rgba(16, 99, 104, 0.2);
+}
+
+.btn-fresh-air:hover {
+  background: #0d5155;
+  
+}
+
+.sms-armed-pill {
+  border: 1.5px solid #b7dbe9;
+  background: #edf7fb;
+  color: #0d5155;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.phase-footnote {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9.5px;
+  color: #98a2b3;
+}
+
+.phase-footnote svg {
+  color: #0f8a65;
+}
+
+/* ==========================================================================
+   Visit Pathway Log Card
+   ========================================================================== */
+.pathway-log-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.log-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.log-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #101828;
+}
+
+.log-title h3 {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.milestones-tag {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #667085;
+}
+
+.pathway-log-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.log-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.log-icon-wrap {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #106368;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.log-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.log-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.log-head h4 {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #101828;
+}
+
+.log-time {
+  font-size: 10px;
+  font-weight: 700;
+  color: #98a2b3;
+}
+
+.log-desc {
+  font-size: 11px;
+  color: #475467;
+  line-height: 1.45;
+}
+
+.vitals-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.vital-card {
+  background: #f7fafc;
+  border: 1px solid #e2ecf2;
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vital-lbl {
+  font-size: 8px;
+  font-weight: 800;
+  color: #98a2b3;
+  letter-spacing: 0.5px;
+}
+
+.vital-val {
+  font-size: 13px;
+  font-weight: 800;
+  color: #101828;
+}
+
+.vital-sub {
+  font-size: 8.5px;
+  font-weight: 800;
+}
+
+.vital-sub.normal { color: #0b7353; }
+.vital-sub.resting { color: #106368; }
+.vital-sub.optimal { color: #0b7353; }
+
+.amenities-sub-row {
+  border-top: 1px dashed #e4edf3;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.amenity-title {
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #98a2b3;
+  letter-spacing: 0.5px;
+}
+
+.amenity-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.amenity-tag {
+  background: #f1f7fa;
+  border: 1px solid #cce2ee;
+  color: #0d5155;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ==========================================================================
+   Upcoming Phase Card (Right Column)
+   ========================================================================== */
+.upcoming-phase-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.upcoming-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.phase-overline {
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #98a2b3;
+  letter-spacing: 0.5px;
+}
+
+.upcoming-header-row h3 {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #101828;
+  margin-top: 2px;
+}
+
+.phase-location {
+  font-size: 10.5px;
+  color: #667085;
+}
+
+.upcoming-countdown-badge {
+  background: #e2f2f6;
+  border: 1px solid #bce1ea;
+  color: #0d5155;
+  padding: 5px 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.upcoming-countdown-badge strong {
+  display: block;
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.upcoming-countdown-badge small {
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.upcoming-lead {
+  font-size: 11.5px;
+  color: #475467;
+  line-height: 1.45;
+}
+
+.checklist-card {
+  background: #f8fbfe;
+  border: 1px solid #dce8f2;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.checklist-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #1d2939;
+}
+
+.checklist-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 2px;
+}
+
+.checklist-list li {
+  font-size: 10.5px;
+  color: #475467;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  line-height: 1.4;
+}
+
+.checklist-list li::before {
+  content: "•";
+  color: #106368;
+  font-weight: bold;
+}
+
+.alert-hint-box {
+  background: #f0f8fc;
+  border: 1px solid #c9e3f0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  gap: 8px;
+  font-size: 10.5px;
+  color: #475467;
+  line-height: 1.45;
+}
+
+.alert-hint-box svg {
+  color: #106368;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ==========================================================================
+   Post-Consultation & Lab Work Accordion
+   ========================================================================== */
+.labwork-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.labwork-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.labwork-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.labwork-title svg {
+  color: #106368;
+}
+
+.labwork-title h4 {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #101828;
+}
+
+.chevron-icon {
+  color: #98a2b3;
+}
+
+.labwork-desc {
+  font-size: 10.5px;
+  color: #667085;
+  line-height: 1.45;
+}
+
+.summary-status-strip {
+  background: #f7fafc;
+  border: 1px solid #e1ecf2;
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10.5px;
+  color: #344054;
+  font-weight: 600;
+}
+
+.badge-ready {
+  background: #e2f2f7;
+  color: #0d5155;
+  font-size: 8.5px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   Need Direct Assistance Card
+   ========================================================================== */
+.assistance-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.assist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assist-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.assist-title svg {
+  color: #106368;
+}
+
+.assist-title h4 {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #101828;
+}
+
+.online-dot {
+  color: #0f8a65;
+  font-size: 11px;
+}
+
+.assist-desc {
+  font-size: 10.5px;
+  color: #667085;
+  line-height: 1.45;
+}
+
+.assist-actions-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 8px;
+}
+
+.btn-call-attendant {
+  background: #edf7fa;
+  border: 1px solid #bce1ea;
+  color: #0d5155;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.btn-call-attendant:hover {
+  background: #dff0f5;
+  border-color: #167e84;
+}
+
+.btn-copy-wifi {
+  border: 1px solid #e4edf3;
+  background: #ffffff;
+  color: #344054;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.btn-copy-wifi:hover {
+  background: #f2f4f7;
+  border-color: #d0d5dd;
+}
+
+/* ==========================================================================
+   Responsive Media Queries
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .app-container {
+    grid-template-columns: 190px 1fr;
+  }
+  .progress-columns-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .app-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid #e4edf3;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .nav-item {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .stepper-container {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .step-node {
+    min-width: 90px;
+  }
+}
+
+@media (max-width: 600px) {
+  .utility-bar {
+    padding: 10px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .progress-hero-header {
+    padding: 14px 16px 8px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .patient-id-strip {
+    margin: 6px 16px 12px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .stepper-section {
+    margin: 0 16px 14px 16px;
+  }
+
+  .progress-columns-grid {
+    padding: 0 16px 24px 16px;
+    gap: 14px;
+  }
+
+  .live-status-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vitals-metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .phase-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .assist-actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+

@@ -1,0 +1,1087 @@
+/* ==========================================================================
+   CalmWait Live Queue & Wait Status - Styles & Design System
+   ========================================================================== */
+
+
+/* Base Reset & Typography */
+body.page-queue {
+  background-color: #f4f7fa;
+  color: #1d2939;
+  min-height: 100vh;
+  line-height: 1.45;
+}
+
+
+
+/* ==========================================================================
+   Live Queue Overview Banner
+   ========================================================================== */
+.queue-overview-banner {
+  margin: 16px 28px 8px 28px;
+  background: #ffffff;
+  border: 1px solid #e4edf3;
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title-with-tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.title-with-tags h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #101828;
+  letter-spacing: -0.4px;
+}
+
+.chip {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 9999px;
+}
+
+.chip-wing {
+  background: #edf6fa;
+  color: #0d5155;
+  border: 1px solid #cae1ed;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chip-transparency {
+  background: #e6f6f0;
+  color: #0b7353;
+  border: 1px solid #bce6d5;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.calc-link {
+  font-size: 11px;
+  color: #106368;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.calc-link:hover {
+  color: #0a3d40;
+}
+
+.banner-sub {
+  font-size: 11px;
+  color: #667085;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.green-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0f8a65;
+}
+
+.btn-refresh {
+  border: 1px solid #c0d9e5;
+  background: #eef6fa;
+  color: #0d5155;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-refresh:hover {
+  background: #deeff5;
+  border-color: #167e84;
+  
+}
+
+/* ==========================================================================
+   2-Column Queue Layout
+   ========================================================================== */
+.queue-layout-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 20px;
+  padding: 8px 28px 24px 28px;
+  align-items: start;
+}
+
+.queue-left-column,
+.queue-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Base Card */
+.card {
+  background: #ffffff;
+  border: 1px solid #e4edf3;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.04), 0 1px 2px rgba(16, 24, 40, 0.02);
+}
+
+/* ==========================================================================
+   Estimated Wait Window Card
+   ========================================================================== */
+.wait-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.tag-overline {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #98a2b3;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.wait-time-large {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.wait-time-large h3 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #101828;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.wait-unit {
+  font-size: 14px;
+  font-weight: 700;
+  color: #667085;
+}
+
+.ahead-badge {
+  background: #edf7fa;
+  border: 1.5px solid #cae6ee;
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ahead-icon {
+  color: #106368;
+}
+
+.ahead-text small {
+  display: block;
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #0d5155;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ahead-text strong {
+  font-size: 13px;
+  color: #101828;
+}
+
+/* Timeline Graphic */
+.timeline-slider-wrap {
+  margin-bottom: 16px;
+}
+
+.slider-labels-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.min-lbl {
+  color: #106368;
+}
+
+.target-lbl {
+  background: #e0f2f5;
+  color: #0d5155;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #baddde;
+}
+
+.max-lbl {
+  color: #98a2b3;
+}
+
+.timeline-bar {
+  height: 8px;
+  background: #e9eff4;
+  border-radius: 9999px;
+  position: relative;
+  overflow: visible;
+}
+
+.timeline-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #98d1dc;
+  border-radius: 9999px;
+}
+
+.timeline-pin {
+  position: absolute;
+  top: -4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #106368;
+  box-shadow: 0 0 0 3px #ffffff, 0 2px 5px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+}
+
+.pin-dot {
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.timeline-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: #98a2b3;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.active-tick {
+  color: #106368;
+  font-weight: 800;
+}
+
+/* Callout */
+.pacing-callout {
+  background: #f1f8fb;
+  border: 1px solid #cce5ef;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: #344054;
+  margin-bottom: 12px;
+}
+
+.callout-clock-icon {
+  color: #106368;
+}
+
+.wait-footnote {
+  font-size: 10px;
+  color: #98a2b3;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   Physician In-Consultation Card
+   ========================================================================== */
+.doc-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e4edf3;
+  margin-bottom: 14px;
+}
+
+.doc-badge-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: #106368;
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doc-header-info {
+  flex: 1;
+}
+
+.doc-header-info h4 {
+  font-size: 13px;
+  font-weight: 800;
+  color: #101828;
+}
+
+.doc-header-info p {
+  font-size: 10.5px;
+  color: #667085;
+}
+
+.status-chip-consulting {
+  background: #e6f6f0;
+  border: 1px solid #b7e4d2;
+  color: #0b7353;
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.chip-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #0b7353;
+}
+
+.doctor-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.doc-metric-item {
+  background: #f7fafc;
+  border: 1px solid #e1ecf2;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.d-metric-lbl {
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #98a2b3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-token-pill {
+  background: #106368;
+  color: #fff;
+  padding: 3px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 800;
+  width: fit-content;
+}
+
+.d-metric-val {
+  font-size: 12px;
+  color: #1d2939;
+  font-weight: 800;
+}
+
+.d-metric-sub {
+  font-size: 9.5px;
+  color: #667085;
+}
+
+/* ==========================================================================
+   Schedule Alert Card
+   ========================================================================== */
+.schedule-alert-card {
+  background: #fffcf5;
+  border: 1.5px solid #f6ddb7;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.schedule-alert-icon {
+  background: #faeed9;
+  border: 1px solid #ecd3ac;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9a5b0b;
+  flex-shrink: 0;
+}
+
+.schedule-alert-body {
+  flex: 1;
+}
+
+.schedule-head-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.schedule-head-row h4 {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #8c4a00;
+}
+
+.badge-delay {
+  background: #feeecd;
+  color: #9b5400;
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.schedule-text {
+  font-size: 11px;
+  color: #344054;
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+
+.schedule-reassurance {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  color: #667085;
+}
+
+.schedule-reassurance svg {
+  color: #0f8a65;
+}
+
+/* Step Out Big Button */
+.step-out-btn-wrap {
+  margin-top: -4px;
+}
+
+.btn-step-out-main {
+  background: #106368;
+  color: #fff;
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(16, 99, 104, 0.25);
+}
+
+.btn-step-out-main:hover {
+  background: #0d5155;
+  
+  box-shadow: 0 6px 16px rgba(16, 99, 104, 0.35);
+}
+
+/* ==========================================================================
+   Right Column: Priority Triage Notice
+   ========================================================================== */
+.priority-triage-card {
+  background: #fbfdff;
+  border: 1px solid #d5e5f0;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.triage-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.triage-icon-wrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: #edf5fa;
+  border: 1px solid #cce2ee;
+  color: #106368;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.triage-text h4 {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #174268;
+}
+
+.triage-tag {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #98a2b3;
+  letter-spacing: 0.5px;
+}
+
+.triage-stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid #e4edf3;
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.triage-stat-item span {
+  font-size: 9.5px;
+  color: #667085;
+  display: block;
+}
+
+.triage-stat-item strong {
+  font-size: 11px;
+  color: #1d2939;
+}
+
+.triage-stat-item.highlight strong {
+  color: #b54708;
+}
+
+.triage-accordion-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: #0d5155;
+  font-weight: 700;
+  cursor: pointer;
+  padding-top: 4px;
+}
+
+.triage-accordion-trigger:hover {
+  text-decoration: underline;
+}
+
+.trigger-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   Waiting Sequence List
+   ========================================================================== */
+.waiting-sequence-card {
+  padding: 20px;
+}
+
+.sequence-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sequence-header h3 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #101828;
+}
+
+.seq-pavilion-badge {
+  font-size: 9px;
+  font-weight: 800;
+  color: #667085;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.sequence-privacy-notice {
+  font-size: 10px;
+  color: #98a2b3;
+  margin: 2px 0 12px 0;
+}
+
+.sequence-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sequence-row {
+  background: #ffffff;
+  border: 1px solid #e7eff4;
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sequence-row:hover {
+  border-color: #bed7e5;
+  background: #fafcfe;
+}
+
+.seq-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: #f0f4f8;
+  color: #475467;
+  font-size: 10.5px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.seq-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.seq-info strong {
+  font-size: 11.5px;
+  color: #1d2939;
+}
+
+.seq-info span {
+  font-size: 9.5px;
+  color: #98a2b3;
+}
+
+.seq-status-badge {
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-green {
+  background: #e6f6f0;
+  color: #0b7353;
+}
+
+.badge-blue {
+  background: #eef6fb;
+  color: #1a6f9a;
+  border: 1px solid #c9e0ed;
+}
+
+.badge-purple {
+  background: #f4ebff;
+  color: #6941c6;
+}
+
+.badge-teal {
+  background: #e6f6f8;
+  color: #0d5155;
+}
+
+.badge-gray {
+  background: #f1f4f7;
+  color: #475467;
+}
+
+/* User Card in Waiting Sequence */
+.sequence-row.current-user-row {
+  background: #f0f9fa;
+  border: 2px solid #106368;
+  padding: 10px 12px;
+  box-shadow: 0 2px 8px rgba(16, 99, 104, 0.15);
+}
+
+.user-num {
+  background: #106368;
+  color: #ffffff;
+}
+
+.seq-user-token {
+  flex: 1;
+}
+
+.token-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.token-title-row strong {
+  font-size: 13px;
+  color: #0a3d40;
+}
+
+.user-you-tag {
+  background: #106368;
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+.user-est-text {
+  font-size: 9.5px;
+  color: #0d5155;
+  font-weight: 600;
+  display: block;
+}
+
+.user-position-box {
+  text-align: right;
+}
+
+.pos-badge {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0d5155;
+}
+
+.user-position-box small {
+  font-size: 9px;
+  color: #667085;
+}
+
+.hipaa-compliance-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #98a2b3;
+  margin-top: 14px;
+}
+
+/* ==========================================================================
+   What Could Change Your Wait (Scenarios Card)
+   ========================================================================== */
+.scenarios-card {
+  padding: 20px;
+}
+
+.scenarios-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.scenarios-title svg {
+  color: #106368;
+}
+
+.scenarios-title h3 {
+  font-size: 13px;
+  font-weight: 800;
+  color: #101828;
+}
+
+.scenarios-sub {
+  font-size: 10px;
+  color: #98a2b3;
+  margin-bottom: 14px;
+}
+
+.scenario-item {
+  background: #fbfcfd;
+  border: 1px solid #e7eff4;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.scenario-item:hover {
+  background: #f5f9fc;
+}
+
+.scenario-item.active {
+  background: #ffffff;
+  border: 1.5px solid #106368;
+  box-shadow: 0 2px 6px rgba(16, 99, 104, 0.1);
+}
+
+.scen-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scen-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #1d2939;
+}
+
+.badge-curr {
+  background: #106368;
+  color: #fff;
+  font-size: 8px;
+  font-weight: 800;
+  padding: 2px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.scen-time {
+  font-size: 11.5px;
+  font-weight: 800;
+}
+
+.scen-time.green { color: #0b7353; }
+.scen-time.blue  { color: #0d5155; }
+.scen-time.amber { color: #b54708; }
+
+.scen-bar-wrap {
+  height: 6px;
+  background: #eaeff3;
+  border-radius: 4px;
+  position: relative;
+}
+
+.scen-pill-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 4px;
+}
+
+.scen-pill-bar.green { background: #0f8a65; }
+.scen-pill-bar.blue  { background: #106368; }
+.scen-pill-bar.amber { background: #d97706; }
+
+.scen-caption {
+  font-size: 9.5px;
+  color: #667085;
+}
+
+.scenario-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8.5px;
+  color: #98a2b3;
+  font-weight: 600;
+  padding: 4px 4px 0 4px;
+}
+
+/* ==========================================================================
+   Bottom Amenities Banner
+   ========================================================================== */
+.amenities-bottom-strip {
+  margin: 4px 28px 28px 28px;
+  background: #ffffff;
+  border: 1px solid #e4edf3;
+  border-radius: 10px;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.amenities-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.amenities-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  background: #f0f7fb;
+  border: 1px solid #c9e0ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #106368;
+  flex-shrink: 0;
+}
+
+.amenities-info strong {
+  font-size: 11.5px;
+  color: #101828;
+  display: block;
+}
+
+.amenities-info p {
+  font-size: 10px;
+  color: #667085;
+}
+
+.amenities-wifi-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wifi-label {
+  font-size: 11px;
+  display: flex;
+  gap: 5px;
+}
+
+.wifi-label span {
+  color: #98a2b3;
+}
+
+.wifi-label strong {
+  color: #0d5155;
+}
+
+.btn-copy-pass {
+  border: 1px solid #b7d6e4;
+  background: #f0f7fa;
+  color: #0d5155;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 10.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-copy-pass:hover {
+  background: #e2f1f7;
+  border-color: #167e84;
+}
+
+/* ==========================================================================
+   Responsive Media Queries
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .app-container {
+    grid-template-columns: 190px 1fr;
+  }
+  .queue-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .app-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid #e4edf3;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .nav-item {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .queue-overview-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .btn-refresh {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .amenities-bottom-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .utility-bar {
+    padding: 10px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .queue-overview-banner {
+    margin: 12px 16px 0 16px;
+    padding: 12px;
+  }
+
+  .queue-layout-grid {
+    padding: 8px 16px 16px 16px;
+    gap: 14px;
+  }
+
+  .doctor-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .triage-stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .amenities-bottom-strip {
+    margin: 4px 16px 20px 16px;
+  }
+}
+
+
+
+
