@@ -1,0 +1,988 @@
+/* ==========================================================================
+   CalmWait - Visit Overview / Patient Pass (Pixel-Refined CSS)
+   ========================================================================== */
+
+
+/* Base Reset & Core Typography */
+
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: #edf7f8;
+  border: 1.5px solid #106368;
+  color: #106368;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+
+
+/* ==========================================================================
+   Visit Top Subheader Bar
+   ========================================================================== */
+.visit-top-bar {
+  padding: 16px 28px 10px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.visit-heading-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.visit-heading-group h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #101828;
+  letter-spacing: -0.3px;
+}
+
+.live-synced-pill {
+  background: #e6f7f1;
+  border: 1px solid #bee6d7;
+  color: #097252;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  letter-spacing: 0.5px;
+}
+
+.sync-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #097252;
+}
+
+.consultation-time-badge {
+  font-size: 11.5px;
+  color: #0c5357;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.consultation-time-badge svg {
+  color: #106368;
+}
+
+/* ==========================================================================
+   2-Column Layout Grid
+   ========================================================================== */
+.visit-layout-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 20px;
+  padding: 6px 28px 36px 28px;
+  align-items: start;
+}
+
+.visit-left-col,
+.visit-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* Base Card */
+.card {
+  background: #ffffff;
+  border: 1px solid #e2ecf2;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.05), 0 1px 2px rgba(16, 24, 40, 0.02);
+}
+
+.card:hover {
+  box-shadow: 0 6px 18px -2px rgba(16, 40, 60, 0.08), 0 2px 6px -1px rgba(16, 40, 60, 0.03);
+  border-color: #d2e4ee;
+}
+
+/* ==========================================================================
+   Current Queue Status Banner
+   ========================================================================== */
+.queue-status-banner {
+  background: #eef7fa;
+  border: 1.5px solid #cae4ee;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.queue-status-banner:hover {
+  border-color: #badbe6;
+  background: #e9f4f8;
+}
+
+.status-badge-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  background: #106368;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.status-banner-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.status-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.status-label {
+  font-size: 9px;
+  font-weight: 800;
+  color: #0c5357;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.status-updated {
+  font-size: 10px;
+  color: #98a2b3;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.status-main-text {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #101828;
+  margin-bottom: 4px;
+}
+
+.status-telemetry-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #475467;
+  flex-wrap: wrap;
+}
+
+.tele-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tele-item svg {
+  color: #106368;
+}
+
+.tele-dot {
+  color: #98a2b3;
+}
+
+/* ==========================================================================
+   Boarding Pass / Patient Ticket Card
+   ========================================================================== */
+.boarding-pass-card {
+  padding: 22px;
+  border: 1.5px solid #d5e8f0;
+}
+
+.pass-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed #e2ecf2;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.patient-title-group {
+  flex: 1;
+}
+
+.badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.badge-care {
+  background: #edf7fa;
+  border: 1px solid #cae4ed;
+  color: #0c5357;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.pass-serial {
+  font-size: 10px;
+  font-weight: 700;
+  color: #98a2b3;
+}
+
+.patient-title-group h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #101828;
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+}
+
+.doctor-room-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 11.5px;
+  color: #475467;
+}
+
+.doctor-line, .room-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.doctor-line svg, .room-line svg {
+  color: #106368;
+}
+
+.queue-token-box {
+  background: #f1f8fc;
+  border: 1.5px solid #cce2ed;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.queue-token-box:hover {
+  background: #eaf4f9;
+  border-color: #167e84;
+}
+
+.token-top-lbl {
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #98a2b3;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.token-giant {
+  font-size: 28px;
+  font-weight: 800;
+  color: #093e42;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin: 1px 0;
+}
+
+.btn-enlarge {
+  background: #ffffff;
+  border: 1px solid #bcdbe7;
+  color: #0c5357;
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.btn-enlarge:hover {
+  background: #106368;
+  border-color: #106368;
+  color: #fff;
+  
+}
+
+/* 4-Column Grid Stats */
+.pass-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  background: #f8fbfe;
+  border: 1px solid #e1edf3;
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.p-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.p-metric-lbl {
+  font-size: 8px;
+  font-weight: 800;
+  color: #98a2b3;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.p-metric-val {
+  font-size: 13px;
+  font-weight: 800;
+  color: #1d2939;
+}
+
+.p-metric-val.highlight-blue {
+  color: #0c5357;
+}
+
+.complete-val {
+  color: #097252;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Barcode & Vitals Strip */
+.intake-confirmation-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-top: 4px;
+}
+
+.intake-met.intake-lbl {
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #98a2b3;
+  letter-spacing: 0.5px;
+}
+
+.vitals-readout {
+  font-size: 11.5px;
+  color: #344054;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.v-dot {
+  color: #d0d5dd;
+}
+
+.intake-hint {
+  font-size: 9.5px;
+  color: #667085;
+  line-height: 1.35;
+}
+
+.barcode-graphic-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.barcode-lines {
+  height: 28px;
+  display: flex;
+  gap: 2px;
+}
+
+.barcode-lines span {
+  display: block;
+  height: 100%;
+  background: #1d2939;
+  width: 2px;
+}
+
+.barcode-lines span:nth-child(2n) { width: 3px; }
+.barcode-lines span:nth-child(3n) { width: 1px; }
+.barcode-lines span:nth-child(4n) { width: 4px; }
+
+.barcode-serial {
+  font-size: 7.5px;
+  font-weight: 700;
+  color: #667085;
+  letter-spacing: 0.5px;
+}
+
+/* Action Buttons Row */
+.visit-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-action-primary {
+  background: #106368;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(16, 99, 104, 0.25);
+}
+
+.btn-action-primary:hover {
+  background: #0c5357;
+  
+  box-shadow: 0 4px 10px rgba(16, 99, 104, 0.35);
+}
+
+.btn-action-secondary {
+  border: 1.5px solid #bedbe8;
+  background: #ffffff;
+  color: #0c5357;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-action-secondary:hover {
+  background: #f0f7fb;
+  border-color: #167e84;
+  
+}
+
+.link-walkin {
+  font-size: 11px;
+  color: #106368;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-left: auto;
+}
+
+.link-walkin:hover {
+  color: #093e42;
+}
+
+/* ==========================================================================
+   Wait Velocity Graph Card
+   ========================================================================== */
+.velocity-card {
+  padding: 18px 20px;
+}
+
+.velocity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.velocity-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.velocity-title svg {
+  color: #106368;
+}
+
+.velocity-title h4 {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #101828;
+}
+
+.badge-velocity-status {
+  background: #edf8f4;
+  border: 1px solid #c2e8d7;
+  color: #097252;
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.velocity-chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.velocity-svg {
+  width: 100%;
+  height: 60px;
+  overflow: visible;
+}
+
+.chart-timeline-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9.5px;
+  color: #98a2b3;
+  font-weight: 600;
+}
+
+.active-timeline-point {
+  color: #0c5357;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   Right Column: Steps Card
+   ========================================================================== */
+.steps-card {
+  padding: 20px;
+}
+
+.steps-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.steps-card-title svg {
+  color: #106368;
+}
+
+.steps-card-title h3 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #101828;
+}
+
+.numbered-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.step-guide-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+.step-guide-item:hover {
+  background: #f8fbfe;
+}
+
+.step-index {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #106368;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.step-guide-body strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  color: #101828;
+  margin-bottom: 2px;
+}
+
+.step-guide-body p {
+  font-size: 11px;
+  color: #475467;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   Digital Ticket / QR Card
+   ========================================================================== */
+.ticket-qr-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ticket-header-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.ticket-title-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ticket-title-group svg {
+  color: #106368;
+}
+
+.ticket-title-group h3 {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #101828;
+}
+
+.badge-ready-pill {
+  background: #e6f7f1;
+  color: #097252;
+  font-size: 8.5px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.qr-canvas-box {
+  background: #ffffff;
+  border: 1.5px solid #d8e8f0;
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 220px;
+}
+
+.qr-canvas-box:hover {
+  
+  border-color: #167e84;
+}
+
+.qr-svg {
+  width: 140px;
+  height: 140px;
+}
+
+.qr-ticket-caption {
+  margin-top: 8px;
+}
+
+.qr-ticket-caption h4 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #093e42;
+}
+
+.qr-ticket-caption small {
+  font-size: 9.5px;
+  color: #98a2b3;
+  font-weight: 700;
+}
+
+.qr-helper-text {
+  font-size: 10.5px;
+  color: #667085;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.btn-download-pass {
+  background: #106368;
+  color: #fff;
+  width: 100%;
+  padding: 9px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 6px rgba(16, 99, 104, 0.2);
+}
+
+.btn-download-pass:hover {
+  background: #0c5357;
+  
+}
+
+.btn-share-ticket {
+  border: 1px solid #d0d5dd;
+  background: #ffffff;
+  color: #344054;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.btn-share-ticket:hover {
+  background: #f2f4f7;
+  border-color: #98a2b3;
+}
+
+.qr-security-note {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9.5px;
+  color: #98a2b3;
+}
+
+/* ==========================================================================
+   Feeling Unwell Card
+   ========================================================================== */
+.unwell-card {
+  background: #fff8f7;
+  border: 1.5px solid #fecdca;
+  padding: 16px;
+}
+
+.unwell-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #b42318;
+  margin-bottom: 4px;
+}
+
+.unwell-head h4 {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.unwell-card p {
+  font-size: 10.5px;
+  color: #475467;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.btn-unwell-urgent {
+  background: #ffffff;
+  border: 1.5px solid #b42318;
+  color: #b42318;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-unwell-urgent:hover {
+  background: #b42318;
+  color: #fff;
+  
+}
+
+/* ==========================================================================
+   Clinic Amenities Card
+   ========================================================================== */
+.amenities-list-card {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.amenities-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.amenities-title svg {
+  color: #106368;
+}
+
+.amenities-title h4 {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #101828;
+}
+
+.amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+  color: #475467;
+  padding: 2px 0;
+}
+
+.amenity-item svg {
+  color: #106368;
+  flex-shrink: 0;
+}
+
+/* Floor Plan */
+.floor-plan-indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 2px;
+}
+
+.floor-lbl {
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #98a2b3;
+  letter-spacing: 0.5px;
+}
+
+.floor-location-pill {
+  background: #eaf3fa;
+  border: 1px solid #c9dfea;
+  color: #0c5357;
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   Responsive Media Queries
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .app-container {
+    grid-template-columns: 190px 1fr;
+  }
+  .visit-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .app-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid #e2ecf2;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .nav-item {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .pass-header-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .queue-token-box {
+    width: 100%;
+  }
+
+  .pass-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .intake-confirmation-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .utility-bar {
+    padding: 10px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .visit-top-bar {
+    padding: 14px 16px 8px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .visit-layout-grid {
+    padding: 6px 16px 24px 16px;
+    gap: 14px;
+  }
+
+  .pass-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visit-action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .link-walkin {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+
+
+
+

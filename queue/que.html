@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CalmWait - Live Queue - Wait Status</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../global/global.css">
+  <link rel="stylesheet" href="queue.css">
+</head>
+<body class="page-queue">
+
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <div class="brand-icon">✚</div>
+          <div class="brand-text">
+            <h1>CalmWait</h1>
+            <span>Patient Portal</span>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <a href="../visit/visit.html" class="nav-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+            <span>Visit</span>
+          </a>
+          <a href="../que/que.html" class="nav-item active">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span>Queue</span>
+          </a>
+          <a href="../progress/progress.html" class="nav-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            <span>Progress</span>
+          </a>
+          <a href="../notification/notification.html" class="nav-item">
+            <div class="nav-icon-title">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span>Alerts</span>
+            </div>
+            <span class="alert-dot-indicator"></span>
+          </a>
+                  <a href="../index.html" class="nav-item">Temporary Leave</a>
+          <a href="../login/login.html" class="nav-item">Patient Login</a>
+          <a href="../pro/pro.html" class="nav-item">Patient Profile</a></nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="location-info">
+          <div class="loc-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Main Campus</span>
+          </div>
+          <p class="loc-sub">Level 1 • South Pavilion</p>
+        </div>
+        <a href="#" class="footer-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          Assistance &amp; FAQs
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- Top Utility Header -->
+      <header class="utility-bar">
+        <div class="desk-indicator">
+          <span class="pulse-badge">
+            <span class="pulse-dot"></span>
+            Reception Desk A Online
+          </span>
+          <span class="desk-meta">• Wait times nominal (under 12m)</span>
+        </div>
+
+        <div class="account-actions">
+          <button class="btn btn-support" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            Help / Attendant
+          </button>
+          <a href="../pro/pro.html" class="profile-avatar" aria-label="Open patient profile">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </a>
+        </div>
+      </header>
+
+      <!-- Live Queue Main Header Banner -->
+      <section class="queue-overview-banner">
+        <div class="banner-title-group">
+          <div class="title-with-tags">
+            <h2>Live Queue</h2>
+            <span class="chip chip-wing">South Wing</span>
+            <span class="chip chip-transparency">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Clinic Transparency Today: 92%
+            </span>
+            <a href="#" class="calc-link">How is this calculated?</a>
+          </div>
+          <p class="banner-sub">
+            <span class="green-live-dot"></span> Updated 2 min ago • Doctor: Mehta (General Medicine)
+          </p>
+        </div>
+
+        <button class="btn btn-refresh" type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+          Refresh status
+        </button>
+      </section>
+
+      <!-- Queue Content Grid (2 Columns) -->
+      <div class="queue-layout-grid">
+        
+        <!-- Left Column: Wait Window, Physician Status, Delay notice, Step Out -->
+        <div class="queue-left-column">
+
+          <!-- Estimated Wait Window Card -->
+          <article class="card wait-window-card">
+            <div class="wait-header-row">
+              <div class="wait-primary-metric">
+                <span class="tag-overline">Estimated Wait Window</span>
+                <div class="wait-time-large">
+                  <h3>20–35</h3>
+                  <span class="wait-unit">min</span>
+                </div>
+              </div>
+
+              <div class="ahead-badge">
+                <div class="ahead-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path></svg>
+                </div>
+                <div class="ahead-text">
+                  <small>Ahead of you</small>
+                  <strong>3 patients</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wait Range Slider Graphic -->
+            <div class="timeline-slider-wrap">
+              <div class="slider-labels-top">
+                <span class="min-lbl">• Min: 20m</span>
+                <span class="target-lbl">Most likely around 25 min</span>
+                <span class="max-lbl">Max: 35m+</span>
+              </div>
+
+              <div class="timeline-bar">
+                <div class="timeline-fill" style="left: 28%; width: 44%;"></div>
+                <div class="timeline-pin" style="left: 45%;">
+                  <span class="pin-dot"></span>
+                </div>
+              </div>
+
+              <div class="timeline-ticks">
+                <span>0m</span>
+                <span>20m</span>
+                <span class="active-tick">25m (Target)</span>
+                <span>35m</span>
+                <span>45m</span>
+                <span>60m</span>
+              </div>
+            </div>
+
+            <!-- Pacing Notice Callout -->
+            <div class="pacing-callout">
+              <div class="callout-clock-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              </div>
+              <p>
+                <strong>Estimate updated: 2 urgent triage cases accommodated.</strong> Pacing calibrated dynamically.
+              </p>
+            </div>
+
+            <p class="wait-footnote">
+              This is an estimate. It can change dynamically if a consultation requires additional clinical care or emergency evaluation.
+            </p>
+          </article>
+
+          <!-- Physician In-Consultation Card -->
+          <article class="card doctor-status-card">
+            <div class="doc-card-head">
+              <div class="doc-badge-avatar">DM</div>
+              <div class="doc-header-info">
+                <h4>Dr. Mehta — General Medicine</h4>
+                <p>Exam Room 3 • South Pavilion Wing</p>
+              </div>
+              <span class="status-chip-consulting">
+                <span class="chip-dot"></span>
+                In Consultation
+              </span>
+            </div>
+
+            <div class="doctor-metrics-grid">
+              <div class="doc-metric-item">
+                <span class="d-metric-lbl">Now Serving</span>
+                <div class="metric-token-pill">Token A-20</div>
+                <small class="d-metric-sub">Exam Room 3</small>
+              </div>
+
+              <div class="doc-metric-item">
+                <span class="d-metric-lbl">Current Consultation</span>
+                <strong class="d-metric-val">~8 mins in room</strong>
+                <small class="d-metric-sub">Started: 10:22 AM</small>
+              </div>
+
+              <div class="doc-metric-item">
+                <span class="d-metric-lbl">Typical Visit Pacing</span>
+                <strong class="d-metric-val">9–11 mins</strong>
+                <small class="d-metric-sub">Historical average today</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- Schedule Adjustment Warning -->
+          <div class="card schedule-alert-card">
+            <div class="schedule-alert-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            </div>
+            <div class="schedule-alert-body">
+              <div class="schedule-head-row">
+                <h4>Minor Schedule Adjustment</h4>
+                <span class="badge-delay">+5–10 mins</span>
+              </div>
+              <p class="schedule-text">
+                We're running a little behind. Dr. Mehta is seeing <strong>2 urgent triage cases</strong> first. This can add approximately 5 to 10 minutes to the general schedule.
+              </p>
+              <div class="schedule-reassurance">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>All queued patients retain their relative priority sequence. Thank you for your patience.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step Out Trigger Button -->
+          <div class="step-out-btn-wrap">
+            <button class="btn btn-step-out-main" type="button">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 4v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg>
+              Step out for a while
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Priority Triage Notice, Waiting Sequence List, What could change -->
+        <div class="queue-right-column">
+
+          <!-- Priority Triage Accordion Card -->
+          <div class="card priority-triage-card">
+            <div class="triage-header">
+              <div class="triage-icon-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div class="triage-text">
+                <h4>2 priority cases were added ahead of you</h4>
+                <span class="triage-tag">Clinical Triage Update</span>
+              </div>
+            </div>
+
+            <div class="triage-stats-row">
+              <div class="triage-stat-item">
+                <span>Reason</span>
+                <strong>Emergency walk-in</strong>
+              </div>
+              <div class="triage-stat-item highlight">
+                <span>Estimated Impact</span>
+                <strong>+8 to +12 minutes</strong>
+              </div>
+            </div>
+
+            <div class="triage-accordion-trigger">
+              <div class="trigger-label">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                <span>Why do some people go first?</span>
+              </div>
+              <svg class="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </div>
+
+          <!-- Waiting Sequence List -->
+          <div class="card waiting-sequence-card">
+            <div class="sequence-header">
+              <h3>Waiting Sequence</h3>
+              <span class="seq-pavilion-badge">6 IN PAVILION</span>
+            </div>
+            <p class="sequence-privacy-notice">Tokens only to protect patient privacy.</p>
+
+            <div class="sequence-list">
+              
+              <!-- Token 1: In consultation -->
+              <div class="sequence-row in-consultation">
+                <div class="seq-num">1</div>
+                <div class="seq-info">
+                  <strong>Token A-20</strong>
+                  <span>Exam Room 3</span>
+                </div>
+                <div class="seq-status-badge badge-green">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                  In Consultation
+                </div>
+              </div>
+
+              <!-- Token 2: Next in line -->
+              <div class="sequence-row next-line">
+                <div class="seq-num">2</div>
+                <div class="seq-info">
+                  <strong>Token A-21</strong>
+                  <span>Lounge Waiting Area</span>
+                </div>
+                <div class="seq-status-badge badge-blue">Next in Line</div>
+              </div>
+
+              <!-- Token 3: Priority Triage -->
+              <div class="sequence-row priority-triage">
+                <div class="seq-num">3</div>
+                <div class="seq-info">
+                  <strong>Token A-22</strong>
+                  <span>Triage Bay</span>
+                </div>
+                <div class="seq-status-badge badge-purple">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  Priority Triage
+                </div>
+              </div>
+
+              <!-- Token 4: Stepped Out -->
+              <div class="sequence-row stepped-out">
+                <div class="seq-num">4</div>
+                <div class="seq-info">
+                  <strong>Token A-23</strong>
+                  <span>Courtyard Garden</span>
+                </div>
+                <div class="seq-status-badge badge-teal">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                  Stepped Out (+5m)
+                </div>
+              </div>
+
+              <!-- Token 5: USER'S TOKEN (Highlighted Card) -->
+              <div class="sequence-row current-user-row">
+                <div class="seq-num user-num">5</div>
+                <div class="seq-user-token">
+                  <div class="token-title-row">
+                    <strong>Token A-24</strong>
+                    <span class="user-you-tag">YOU</span>
+                  </div>
+                  <span class="user-est-text">Est. call: ~25 mins (approx 10:47 AM)</span>
+                </div>
+                <div class="user-position-box">
+                  <span class="pos-badge">Pos #4</span>
+                  <small>Lounge Seat</small>
+                </div>
+              </div>
+
+              <!-- Token 6: Checked in -->
+              <div class="sequence-row checked-in">
+                <div class="seq-num">6</div>
+                <div class="seq-info">
+                  <strong>Token A-25</strong>
+                  <span>Check-in Kiosk 2</span>
+                </div>
+                <div class="seq-status-badge badge-gray">Checked In</div>
+              </div>
+
+            </div>
+
+            <div class="hipaa-compliance-footer">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span>HIPAA Compliant Patient Anonymization Active</span>
+            </div>
+          </div>
+
+          <!-- What Could Change Your Wait Card -->
+          <div class="card scenarios-card">
+            <div class="scenarios-head">
+              <div class="scenarios-title">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+                <h3>What could change your wait?</h3>
+              </div>
+              <p class="scenarios-sub">Possible scenarios, not promises.</p>
+            </div>
+
+            <!-- Scenario 1: Faster -->
+            <div class="scenario-item scenario-fast">
+              <div class="scen-top">
+                <div class="scen-label">
+                  <span class="scen-arrow">»</span>
+                  <strong>If the queue moves faster</strong>
+                </div>
+                <span class="scen-time green">15–20 min</span>
+              </div>
+              <div class="scen-bar-wrap">
+                <div class="scen-pill-bar green" style="left: 30%; width: 25%;"></div>
+              </div>
+              <span class="scen-caption">Consultations finish quicker than average.</span>
+            </div>
+
+            <!-- Scenario 2: Typical (Selected/Current) -->
+            <div class="scenario-item scenario-typical active">
+              <div class="scen-top">
+                <div class="scen-label">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                  <strong>Typical</strong>
+                  <span class="badge-curr">Current Estimate</span>
+                </div>
+                <span class="scen-time blue">20–35 min</span>
+              </div>
+              <div class="scen-bar-wrap">
+                <div class="scen-pill-bar blue" style="left: 40%; width: 35%;"></div>
+              </div>
+              <span class="scen-caption">Normal flow based on today's current pacing.</span>
+            </div>
+
+            <!-- Scenario 3: Emergency -->
+            <div class="scenario-item scenario-emergency">
+              <div class="scen-top">
+                <div class="scen-label">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                  <strong>If an emergency case arrives</strong>
+                </div>
+                <span class="scen-time amber">35–50 min</span>
+              </div>
+              <div class="scen-bar-wrap">
+                <div class="scen-pill-bar amber" style="left: 60%; width: 30%;"></div>
+              </div>
+              <span class="scen-caption">Doctor called for urgent bedside stabilization.</span>
+            </div>
+
+            <!-- Axis Ticks -->
+            <div class="scenario-ticks">
+              <span>0m</span>
+              <span>15m</span>
+              <span>20m</span>
+              <span>25m</span>
+              <span>50m</span>
+              <span>60m</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Lounge Amenities Banner -->
+      <footer class="amenities-bottom-strip">
+        <div class="amenities-info">
+          <div class="amenities-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+          </div>
+          <div>
+            <strong>South Pavilion Waiting Amenities</strong>
+            <p>Complimentary herbal teas, chilled water, high-speed Wi-Fi, and charging ports at stations 1–8.</p>
+          </div>
+        </div>
+
+        <div class="amenities-wifi-row">
+          <div class="wifi-label">
+            <span>Wi-Fi:</span>
+            <strong>CalmWait-Guest</strong>
+          </div>
+          <button class="btn btn-copy-pass" type="button">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy Pass
+          </button>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
+
+
+
+
