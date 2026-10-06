@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CalmWait - Clinic Analytics & Reports</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../global/global.css">
+  <link rel="stylesheet" href="analytics.css">
+</head>
+<body class="page-analytics">
+
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <div class="brand-icon">✚</div>
+          <div class="brand-text">
+            <h1>CalmWait</h1>
+            <span>South Pavilion Clinic</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section-label">Clinical Operations &amp; Intelligence</div>
+
+        <nav class="nav-list">
+          <a href="../conn/conn.html" class="nav-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span>Live Queue</span>
+          </a>
+          <a href="../conn/conn.html#doctor-pacing" class="nav-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            <span>Doctor Pacing &amp; Rooms</span>
+          </a>
+          <a href="../notification/notification.html" class="nav-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <span>Patient Communications</span>
+          </a>
+          <a href="../anal/anal.html" class="nav-item active">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            <span>Analytics &amp; Reports</span>
+          </a>
+          <a href="../pro/pro.html" class="nav-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            <span>Patient Profile</span>
+          </a>
+                  <a href="../index.html" class="nav-item">Temporary Leave</a>
+          <a href="../login/login.html" class="nav-item">Patient Login</a></nav>
+      </div>
+
+      <!-- Sidebar Status Telemetry -->
+      <div class="sidebar-telemetry-box">
+        <div class="telemetry-node-status">
+          <span class="live-pulse-dot"></span>
+          <strong>Live Sync Active</strong>
+          <span class="muted-dot">•</span>
+          <span>Station Online</span>
+        </div>
+        <p class="telemetry-role">Director &amp; Ops Telemetry</p>
+        <span class="telemetry-latency">Sync Latency: 24ms • Node A-South</span>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- Top Utility Header -->
+      <header class="utility-bar">
+        <div class="header-left-tools">
+          <button class="btn btn-dept-select" type="button">
+            <span>All Departments (Today)</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          
+          <div class="telemetry-pill-group">
+            <span class="tele-chip chip-blue">● 84% on-time rate</span>
+            <span class="tele-chip chip-green">● 14m avg wait</span>
+            <span class="tele-chip chip-orange">● 2 pacing alerts</span>
+          </div>
+        </div>
+
+        <div class="header-right-tools">
+          <div class="tele-time-box">
+            <strong>10:42 AM</strong>
+            <small>Oct 24 • Live Telemetry</small>
+          </div>
+          <button class="btn btn-export" type="button">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Export Reports
+          </button>
+        </div>
+      </header>
+
+      <!-- Page Title & Operational Filter Ribbon -->
+      <section class="operations-filter-ribbon">
+        <div class="ribbon-title-col">
+          <div class="heading-with-chip">
+            <h2>Waiting-Room Operations &amp; Flow Analytics</h2>
+            <span class="ingestion-badge">
+              <span class="ingestion-dot"></span>
+              Live Ingestion
+            </span>
+          </div>
+          <p class="ribbon-subtitle">Identifying bottlenecks, pacing variances, and patient flow dynamics across South Pavilion</p>
+        </div>
+
+        <div class="ribbon-controls-col">
+          <div class="time-range-segments" role="tablist">
+            <button class="segment-btn active" type="button">Today</button>
+            <button class="segment-btn" type="button">7 Days</button>
+            <button class="segment-btn" type="button">30 Days</button>
+            <button class="segment-btn" type="button">Custom</button>
+          </div>
+
+          <div class="filter-dropdown-row">
+            <button class="btn btn-physician-select" type="button">
+              <span>All Physicians (4 active)</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <span class="auto-refresh-tag">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+              Refreshed 3m ago • Next in 12s
+            </span>
+            <button class="btn btn-data-mode" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              Data Mode
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- KPI Summary Row (5 Cards) -->
+      <section class="kpi-metrics-row">
+        
+        <!-- KPI 1: Average Wait Time -->
+        <article class="card kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">AVERAGE WAIT TIME</span>
+            <span class="badge-kpi-delta">+5m vs prior 7d</span>
+          </div>
+          <div class="kpi-value-row">
+            <h3>28</h3>
+            <span class="kpi-unit">min</span>
+          </div>
+          <div class="kpi-footer-meta">
+            <span>Target SLA: &lt; 25 min</span>
+            <span class="kpi-delta-tag red">+12% Delta</span>
+          </div>
+        </article>
+
+        <!-- KPI 2: Longest Recorded Wait -->
+        <article class="card kpi-card alert-kpi">
+          <div class="kpi-top">
+            <span class="kpi-label">LONGEST RECORDED WAIT</span>
+            <svg class="alert-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </div>
+          <div class="kpi-value-row">
+            <h3>74</h3>
+            <span class="kpi-unit">min</span>
+          </div>
+          <div class="kpi-footer-meta">
+            <span>Peak: Tier 1/128 AM</span>
+            <span class="kpi-sub-text">Tier-3 Triage Expln</span>
+          </div>
+        </article>
+
+        <!-- KPI 3: No-Show Rate -->
+        <article class="card kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">NO-SHOW RATE</span>
+            <span class="badge-kpi-delta green">-1.2% Improvement</span>
+          </div>
+          <div class="kpi-value-row">
+            <h3 class="green-val">6%</h3>
+          </div>
+          <div class="kpi-footer-meta">
+            <span>14 of 234 registered</span>
+            <span class="kpi-sub-text green">Under 8% Clinic Cap</span>
+          </div>
+        </article>
+
+        <!-- KPI 4: Step-Out Safe Passes -->
+        <article class="card kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">STEP-OUT SAFE PASSES</span>
+            <span class="badge-kpi-delta cyan">85% return rate</span>
+          </div>
+          <div class="kpi-value-row">
+            <h3>18%</h3>
+            <span class="kpi-unit">utilization</span>
+          </div>
+          <div class="kpi-footer-meta">
+            <span>42 patients on pass</span>
+            <span class="kpi-sub-text cyan">34 returned safe</span>
+          </div>
+        </article>
+
+        <!-- KPI 5: Transparency Score Breakdown (Wider Card) -->
+        <article class="card transparency-score-card">
+          <div class="transparency-header">
+            <div class="transparency-title-group">
+              <span class="kpi-label">Today's Transparency Score</span>
+              <p>How openly we kept patients informed today.</p>
+              <div class="trend-tag-row">
+                <span class="trend-pill">+4% vs prior week</span>
+                <span class="sparkline-dots">88% • 89% • 91% • 91% • 92%</span>
+              </div>
+            </div>
+            
+            <div class="gauge-ring-box">
+              <svg class="circular-chart" viewBox="0 0 36 36">
+                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                <path class="circle-progress" stroke-dasharray="92, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                <text x="18" y="20.5" class="percentage">92%</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="transparency-metrics-grid">
+            <div class="t-metric-row">
+              <span class="t-name">Delay reasons provided</span>
+              <span class="t-badge green">94%</span>
+            </div>
+            <div class="t-metric-row">
+              <span class="t-name">Queue updated live</span>
+              <span class="t-badge green">84%</span>
+            </div>
+            <div class="t-metric-row">
+              <span class="t-name">Doctor status available</span>
+              <span class="t-badge green">100%</span>
+            </div>
+            <div class="t-metric-row">
+              <span class="t-name">Notifications on time</span>
+              <span class="t-badge amber">81% <small>Limit</small></span>
+            </div>
+          </div>
+
+          <div class="transparency-suggestion">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span><strong>Suggestion:</strong> Automate SMS chime dispatch 10 min prior to reduce missed return windows.</span>
+          </div>
+
+          <div class="transparency-footer">
+            <a href="#">How is this calculated?</a>
+            <span>CalmWait Trust Standard</span>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- Main Operational Analytics Grid (2 Columns) -->
+      <div class="analytics-main-grid">
+        
+        <!-- Left Column: Hourly Curve, Doctor Benchmarks, Root Causes, Trajectory -->
+        <div class="analytics-left-col">
+
+          <!-- Average Wait Time by Hour Chart Card -->
+          <article class="card hourly-chart-card">
+            <div class="chart-header-row">
+              <div>
+                <span class="section-card-title">Average Wait Time by Hour of Day</span>
+                <p class="section-card-sub">Continuous ambulatory cohort analysis (9:00 AM - 6:00 PM)</p>
+              </div>
+              <span class="peak-window-pill">
+                Busiest Window: <strong>11 AM - 12 PM (46 min avg)</strong>
+              </span>
+            </div>
+
+            <!-- CSS Bar Chart Component -->
+            <div class="hourly-bar-chart-container">
+              <div class="target-benchmark-line" style="bottom: 50%;">
+                <span class="target-line-tag">TARGET: 25 MIN</span>
+              </div>
+
+              <div class="bar-chart-flex">
+                <!-- 9 AM -->
+                <div class="bar-col">
+                  <span class="bar-val">14m</span>
+                  <div class="bar-fill" style="height: 28%;"></div>
+                  <span class="bar-label">9 AM</span>
+                </div>
+                <!-- 10 AM -->
+                <div class="bar-col">
+                  <span class="bar-val">22m</span>
+                  <div class="bar-fill" style="height: 44%;"></div>
+                  <span class="bar-label">10 AM</span>
+                </div>
+                <!-- 11 AM (PEAK) -->
+                <div class="bar-col peak">
+                  <span class="peak-tag">PEAK</span>
+                  <span class="bar-val">46m</span>
+                  <div class="bar-fill peak-bar" style="height: 92%;"></div>
+                  <span class="bar-label highlight">11 AM</span>
+                </div>
+                <!-- 12 PM -->
+                <div class="bar-col">
+                  <span class="bar-val">38m</span>
+                  <div class="bar-fill" style="height: 76%;"></div>
+                  <span class="bar-label">12 PM</span>
+                </div>
+                <!-- 1 PM -->
+                <div class="bar-col">
+                  <span class="bar-val">18m</span>
+                  <div class="bar-fill" style="height: 36%;"></div>
+                  <span class="bar-label">1 PM</span>
+                </div>
+                <!-- 2 PM -->
+                <div class="bar-col">
+                  <span class="bar-val">26m</span>
+                  <div class="bar-fill" style="height: 52%;"></div>
+                  <span class="bar-label">2 PM</span>
+                </div>
+                <!-- 3 PM -->
+                <div class="bar-col">
+                  <span class="bar-val">33m</span>
+                  <div class="bar-fill" style="height: 66%;"></div>
+                  <span class="bar-label">3 PM</span>
+                </div>
+                <!-- 4 PM -->
+                <div class="bar-col">
+                  <span class="bar-val">28m</span>
+                  <div class="bar-fill" style="height: 56%;"></div>
+                  <span class="bar-label">4 PM</span>
+                </div>
+                <!-- 5 PM -->
+                <div class="bar-col">
+                  <span class="bar-val">19m</span>
+                  <div class="bar-fill" style="height: 38%;"></div>
+                  <span class="bar-label">5 PM</span>
+                </div>
+                <!-- 6 PM -->
+                <div class="bar-col">
+                  <span class="bar-val">12m</span>
+                  <div class="bar-fill" style="height: 24%;"></div>
+                  <span class="bar-label">6 PM</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Flow Pattern Observation Box -->
+            <div class="observation-callout">
+              <div class="callout-indicator">●</div>
+              <p>
+                <strong>Flow Pattern Observation:</strong> Wait times steadily climb after 10:00 AM, peaking acutely between 11:00 AM and 12:00 PM (46 min average), before returning below the 25 min benchmark following the 1:00 PM rotation.
+              </p>
+            </div>
+          </article>
+
+          <!-- 2-Grid Sub-Section: Physician Wait Times & Root Causes -->
+          <div class="sub-analytics-grid">
+            
+            <!-- Card A: Wait Time by Physician -->
+            <article class="card physician-benchmark-card">
+              <div class="sub-header-row">
+                <div>
+                  <span class="sub-card-title">Wait Time by Physician</span>
+                  <span class="sub-card-sub">SOUTH PAVILION ACTIVE CONSULTS</span>
+                </div>
+                <span class="benchmark-tag">Benchmark: 25m</span>
+              </div>
+
+              <div class="physician-rows-list">
+                <!-- Dr. S. Mehta -->
+                <div class="physician-row">
+                  <div class="p-info-head">
+                    <strong>Dr. S. Mehta <small>• Room 3</small></strong>
+                    <span class="p-time orange">34 min <small>(+9m)</small></span>
+                  </div>
+                  <div class="progress-bar-bg">
+                    <div class="progress-bar-fill orange" style="width: 72%;"></div>
+                  </div>
+                  <div class="p-row-meta">Gen Medicine • 56 visits</div>
+                </div>
+
+                <!-- Dr. A. Rao -->
+                <div class="physician-row">
+                  <div class="p-info-head">
+                    <strong>Dr. A. Rao <small>• Room 1</small></strong>
+                    <span class="p-time green">22 min <small>(-3m)</small></span>
+                  </div>
+                  <div class="progress-bar-bg">
+                    <div class="progress-bar-fill green" style="width: 48%;"></div>
+                  </div>
+                  <div class="p-row-meta">Pediatrics • 44 visits</div>
+                </div>
+
+                <!-- Dr. K. Patel -->
+                <div class="physician-row">
+                  <div class="p-info-head">
+                    <strong>Dr. K. Patel <small>• Room 4</small></strong>
+                    <span class="p-time orange">31 min <small>(+6m)</small></span>
+                  </div>
+                  <div class="progress-bar-bg">
+                    <div class="progress-bar-fill orange" style="width: 66%;"></div>
+                  </div>
+                  <div class="p-row-meta">Cardiology Consult • 40 visits</div>
+                </div>
+
+                <!-- Dr. E. Zhang -->
+                <div class="physician-row">
+                  <div class="p-info-head">
+                    <strong>Dr. E. Zhang <small>• Room 2</small></strong>
+                    <span class="p-time green">21 min <small>(-4m)</small></span>
+                  </div>
+                  <div class="progress-bar-bg">
+                    <div class="progress-bar-fill green" style="width: 44%;"></div>
+                  </div>
+                  <div class="p-row-meta">Family Practice • 39 visits</div>
+                </div>
+              </div>
+
+              <div class="physician-footer-summary">
+                <span>Variance delta: ±13 min</span>
+                <span class="on-track-tag">● 2 On Track • 2 Elevated</span>
+              </div>
+            </article>
+
+            <!-- Card B: Delay Root Causes Breakdown -->
+            <article class="card root-causes-card">
+              <div class="sub-header-row">
+                <div>
+                  <span class="sub-card-title">Delay Root Causes Breakdown</span>
+                  <span class="sub-card-sub">SOUTH PAVILION ACCUMULATED VARIANCE</span>
+                </div>
+                <span class="earliest-impact-badge">Earliest Impact</span>
+              </div>
+
+              <div class="cause-bars-list">
+                <div class="cause-row">
+                  <div class="c-head">
+                    <span>Urgent triage cases (ECG/Tier 2/3)</span>
+                    <strong>32%</strong>
+                  </div>
+                  <div class="cause-track"><div class="cause-fill purple" style="width: 32%;"></div></div>
+                </div>
+
+                <div class="cause-row">
+                  <div class="c-head">
+                    <span>Consultations exceeding scheduled block</span>
+                    <strong>27%</strong>
+                  </div>
+                  <div class="cause-track"><div class="cause-fill cyan" style="width: 27%;"></div></div>
+                </div>
+
+                <div class="cause-row">
+                  <div class="c-head">
+                    <span>Late patient check-ins >10 min</span>
+                    <strong>14%</strong>
+                  </div>
+                  <div class="cause-track"><div class="cause-fill orange" style="width: 14%;"></div></div>
+                </div>
+
+                <div class="cause-row">
+                  <div class="c-head">
+                    <span>Room sanitization &amp; transition pauses</span>
+                    <strong>11%</strong>
+                  </div>
+                  <div class="cause-track"><div class="cause-fill teal" style="width: 11%;"></div></div>
+                </div>
+
+                <div class="cause-row">
+                  <div class="c-head">
+                    <span>Kiosk registration &amp; ID verification</span>
+                    <strong>9%</strong>
+                  </div>
+                  <div class="cause-track"><div class="cause-fill blue" style="width: 9%;"></div></div>
+                </div>
+
+                <div class="cause-row">
+                  <div class="c-head">
+                    <span>Other clinical / EHR/Lab delays</span>
+                    <strong>7%</strong>
+                  </div>
+                  <div class="cause-track"><div class="cause-fill gray" style="width: 7%;"></div></div>
+                </div>
+              </div>
+
+              <div class="critical-bottleneck-callout">
+                <strong>Critical Bottleneck:</strong> Urgent cases account for nearly 1/3 (32%) of all accumulated delay in South Pavilion.
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Card: Step-Out Safe Pass Dynamics & No-Show Trajectory -->
+          <article class="card stepout-trajectory-card">
+            <div class="stepout-head-row">
+              <div>
+                <span class="sub-card-title">Step-Out Safe Pass Dynamics &amp; No-Show Trajectory</span>
+                <p class="section-card-sub">Temporary boarding pass leaves and daily absenteeism metrics</p>
+              </div>
+              <div class="auth-counter">
+                <strong>42 Step-Outs</strong>
+                <small>Authorized</small>
+              </div>
+            </div>
+
+            <div class="stepout-outcomes-container">
+              <span class="micro-label">STEP-OUT SAFE PASS OUTCOMES</span>
+              
+              <!-- Stacked Segment Bar -->
+              <div class="stacked-progress-bar">
+                <div class="seg-fill seg-green" style="width: 84%;">84% On-Time</div>
+                <div class="seg-fill seg-orange" style="width: 12%;">12%</div>
+                <div class="seg-fill seg-red" style="width: 4%;">4%</div>
+              </div>
+
+              <div class="stacked-legend">
+                <span><span class="legend-dot green"></span> On-Time (37 pts)</span>
+                <span><span class="legend-dot orange"></span> Grace (7 pts)</span>
+                <span><span class="legend-dot red"></span> Forfeited (6 pts)</span>
+              </div>
+            </div>
+
+            <!-- Mini Daily No-Show Trajectory Bar -->
+            <div class="no-show-bars-strip">
+              <span class="micro-label">NO-SHOWS BY DAY OF WEEK</span>
+              <div class="daily-bars-flex">
+                <div class="d-col">
+                  <div class="d-bar" style="height: 38px;"></div>
+                  <span>Mon</span>
+                </div>
+                <div class="d-col">
+                  <div class="d-bar" style="height: 48px;"></div>
+                  <span>Tue</span>
+                </div>
+                <div class="d-col">
+                  <div class="d-bar" style="height: 32px;"></div>
+                  <span>Wed</span>
+                </div>
+                <div class="d-col highlight">
+                  <div class="d-bar orange" style="height: 58px;"></div>
+                  <span>Thu</span>
+                </div>
+                <div class="d-col">
+                  <div class="d-bar" style="height: 30px;"></div>
+                  <span>Fri</span>
+                </div>
+                <div class="avg-tag-box">
+                  <strong>Avg 6.0%</strong>
+                  <small>Goal: &lt;8%</small>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Right Column: Operations Brief, AI Recommendations, Node Telemetry -->
+        <aside class="analytics-right-col">
+
+          <!-- Operations Brief Header Card -->
+          <article class="card ops-brief-card">
+            <div class="brief-top-badge">
+              <span>SOUTH PAVILION • OPERATIONS BRIEF</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </div>
+
+            <div class="stability-index-row">
+              <h3>Flow Stability Index: 88.4%</h3>
+              <p>Cohort sample: 234 completed ambulatory visits</p>
+            </div>
+
+            <div class="brief-metrics-grid">
+              <div class="brief-m-item">
+                <span>Recommended Immediate Action</span>
+                <strong class="teal-val">Shift 2 intake slots</strong>
+              </div>
+              <div class="brief-m-item">
+                <span>Pacing Alert Priority</span>
+                <strong class="orange-badge">Level 2 Triage</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- Operational Insights & AI Recommendations Card -->
+          <article class="card ai-recommendations-card">
+            <div class="ai-head-row">
+              <div class="ai-title-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <h3>Operational Insights &amp; AI Recommendations</h3>
+              </div>
+              <p class="ai-sub">Real-time pacing guidance for clinic director &amp; charge nurse</p>
+            </div>
+
+            <!-- Recommendation Item 1 -->
+            <div class="rec-card">
+              <div class="rec-top">
+                <div class="rec-badge-icon blue">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <h4>Pacing &amp; Intake Optimization</h4>
+              </div>
+              <p class="rec-text">
+                Wait times peak heavily at <strong>11:00 AM (46m avg)</strong>. Consider shifting 2 intake slots to 9:00 AM or activating the overflow triage station between 10:30 AM and 12:30 PM.
+              </p>
+              <div class="rec-actions-bar">
+                <span class="impact-pill green">IMPACT: -8 MIN REDUCTION</span>
+                <a href="#" class="rec-link">Apply Preset →</a>
+              </div>
+            </div>
+
+            <!-- Recommendation Item 2 -->
+            <div class="rec-card">
+              <div class="rec-top">
+                <div class="rec-badge-icon orange">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                </div>
+                <h4>Dedicated Urgent Buffer</h4>
+              </div>
+              <p class="rec-text">
+                Urgent cases drive <strong>32% of total accumulated delay</strong>. Allocating a reserved 15-minute emergency buffer slot per 3-hour physician block will isolate schedule cascades.
+              </p>
+              <div class="rec-actions-bar">
+                <span class="impact-pill orange">IMPACT: ISOLATES 74M SPIKE</span>
+                <a href="#" class="rec-link">Review Schedule →</a>
+              </div>
+            </div>
+
+            <!-- Recommendation Item 3 -->
+            <div class="rec-card">
+              <div class="rec-top">
+                <div class="rec-badge-icon teal">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <h4>Step-Out SMS Chime</h4>
+              </div>
+              <p class="rec-text">
+                <strong>16% of step-out patients forfeit or return late</strong>. An automated SMS chime dispatched 10 minutes prior to return-by deadline will recover ~5 minutes per affected room.
+              </p>
+              <div class="rec-actions-bar">
+                <span class="impact-pill teal">STATUS: CONFIG READY</span>
+                <a href="#" class="rec-link">Configure SMS →</a>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="ai-action-buttons">
+              <button class="btn btn-roster-adjust" type="button">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                Generate Draft Roster Adjustment
+              </button>
+              <button class="btn btn-handoff-review" type="button">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Schedule Clinical Handoff Review
+              </button>
+            </div>
+          </article>
+
+          <!-- Telemetric Node Footer Card -->
+          <article class="card telemetric-node-card">
+            <div class="node-head">
+              <span class="node-title">TELEMETRIC STATION NODE</span>
+              <span class="node-badge">Active &amp; Calibrated</span>
+            </div>
+
+            <div class="node-specs-list">
+              <div class="node-spec-item">
+                <span>Active Exam Rooms</span>
+                <strong>4 of 4 Occupied</strong>
+              </div>
+              <div class="node-spec-item">
+                <span>Boarding Pass Scanners</span>
+                <strong>2 Kiosks Online (100%)</strong>
+              </div>
+              <div class="node-spec-item">
+                <span>Average Room Turnaround</span>
+                <strong class="highlight-turnaround">4.2 min</strong>
+              </div>
+            </div>
+          </article>
+
+        </aside>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+
