@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CalmWait - Patient Pass &amp; Intake Portal</title>
+  <!-- Google Fonts: Plus Jakarta Sans for clean medical typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Link to External Stylesheet -->
+  <link rel="stylesheet" href="../global/global.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body class="page-login">
+
+  <!-- ================= TOP HEADER ================= -->
+  <header class="top-navbar">
+    <div class="brand-section">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="18" height="18" x="3" y="3" rx="4"/>
+            <path d="M12 8v8"/>
+            <path d="M8 12h8"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name">CalmWait</div>
+          <div class="brand-subtitle">SOUTH PAVILION CLINIC</div>
+        </div>
+      </a>
+      <div class="partner-pill">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        Verified Partner Site
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <ul class="nav-links-list">
+        <li><a href="../login/login.html" class="nav-link">Patient Check-In</a></li>
+        <li><a href="../visit/visit.html" class="nav-link">Verify Visit</a></li>
+        <li><a href="../pro/pro.html" class="nav-link">Patient Profile</a></li>
+        <li><a href="#" class="nav-link">Clinic Help</a></li>
+      </ul>
+
+      <a href="tel:18005550199" class="concierge-pill">
+        <div class="concierge-icon">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0A5.972 5.972 0 0 0 6 18.72"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="concierge-info">
+          <span>Concierge Desk</span>
+          <strong>1-800-555-0199</strong>
+        </div>
+      </a>
+
+      <a href="../pro/pro.html" class="avatar-btn" aria-label="Open patient profile">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= SUB-HEADER STATUS BAR ================= -->
+  <div class="status-subbar">
+    <div class="subbar-left">
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      Secure Patient &amp; Staff Portal • South Pavilion Ambulatory Care Centre
+    </div>
+    <div class="subbar-right">
+      <div class="clinic-indicator">
+        <span class="live-dot"></span> LIVE CLINIC: OPEN • Avg Wait: 14 min
+      </div>
+      <div class="update-time">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 15 14"/>
+        </svg>
+        UPDATED 2M AGO
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN TWO-COLUMN CONTENT ================= -->
+  <div class="page-wrapper">
+    <main class="main-portal-grid">
+      
+      <!-- LEFT COLUMN: LOOKUP / INTAKE FORM -->
+      <div class="left-col">
+        <section class="card intake-card">
+          
+          <!-- Tab Switcher -->
+          <div class="tab-switch-row">
+            <div class="tab-btn active">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <rect width="18" height="18" x="3" y="3" rx="2"/>
+                <path d="M7 7h10M7 12h10M7 17h6"/>
+              </svg>
+              Patient Pass &amp; Intake
+            </div>
+            <a href="../conn/conn.html" class="tab-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              Clinical Staff &amp; Reception</a>
+          </div>
+
+          <!-- Secondary Pills -->
+          <div class="sub-tabs-row">
+            <div class="pill-group">
+              <span class="mini-pill active">Instant Pass Lookup</span>
+              <span class="mini-pill inactive">Mobile SMS Verification</span>
+            </div>
+            <div class="no-pass-badge">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+              No Password Required
+            </div>
+          </div>
+
+          <!-- Scan Ticket Banner -->
+          <div class="scan-banner">
+            <div class="scan-text">
+              <div class="scan-icon-wrap">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 7V5a2 2 0 0 1 2-2h2"/>
+                  <path d="M17 3h2a2 2 0 0 1 2 2v2"/>
+                  <path d="M21 17v2a2 2 0 0 1-2 2h-2"/>
+                  <path d="M7 21H5a2 2 0 0 1-2-2v-2"/>
+                  <rect width="8" height="8" x="8" y="8" rx="1"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Have a printed paper ticket?</strong>
+                <span>Point your mobile camera to restore your digital live pass</span>
+              </div>
+            </div>
+            <button type="button" class="btn-scan">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+                <circle cx="12" cy="13" r="3"/>
+              </svg>
+              Scan Ticket
+            </button>
+          </div>
+
+          <!-- Input Fields: Token & Last Name -->
+          <div class="form-row">
+            <div class="form-group">
+              <div class="label-row">
+                <label class="field-label">Queue Ticket Token / Pass #</label>
+                <span class="helper-tag">e.g. A-24 or P-108</span>
+              </div>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="18" height="18" x="3" y="3" rx="2"/>
+                    <path d="M3 9h18M9 21V9"/>
+                  </svg>
+                </span>
+                <input type="text" class="custom-input" placeholder="A-24" value="A-24" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="label-row">
+                <label class="field-label">Patient's Legal Last Name</label>
+                <span class="helper-tag">Identity Verification</span>
+              </div>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="7" r="4"/>
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  </svg>
+                </span>
+                <input type="text" class="custom-input" placeholder="e.g. Mercer" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Input Field: Date of Birth -->
+          <div class="form-group">
+            <div class="label-row">
+              <label class="field-label">Date of Birth (Security Check)</label>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-icon">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                  <line x1="16" x2="16" y1="2" y2="6"/>
+                  <line x1="8" x2="8" y1="2" y2="6"/>
+                  <line x1="3" x2="21" y1="10" y2="10"/>
+                </svg>
+              </span>
+              <input type="text" class="custom-input" placeholder="mm/dd/yyyy" />
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="button" class="btn-submit">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" x2="12" y1="19" y2="5"/>
+              <polyline points="5 12 12 5 19 12"/>
+            </svg>
+            Retrieve Live Waiting Pass
+          </button>
+
+          <!-- Boarding Metaphor Anatomy Box -->
+          <div class="anatomy-card">
+            <div class="anatomy-header">
+              <span class="anatomy-title">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="18" height="18" x="3" y="3" rx="2"/>
+                  <path d="M3 9h18"/>
+                </svg>
+                BOARDING METAPHOR ANATOMY
+              </span>
+              <span class="sample-pill">Pass #A-24 Sample</span>
+            </div>
+
+            <div class="token-preview-row">
+              <div class="token-preview-left">
+                <span>PATIENT QUEUE ID</span>
+                <strong>TOKEN A-24</strong>
+              </div>
+              <div class="token-routing">
+                ESTIMATED ROOM ROUTING <strong>Bay 3 • Dr. Thorne</strong>
+              </div>
+            </div>
+
+            <!-- Progress Track -->
+            <div class="progress-track">
+              <div class="progress-bar-fill"></div>
+            </div>
+
+            <div class="anatomy-footer">
+              <span>Checked-in: 09:42 AM</span>
+              <span>Stage 2 of 3: Vitals Complete</span>
+            </div>
+          </div>
+
+          <!-- Privacy Guarantee -->
+          <div class="privacy-notice">
+            <span class="privacy-icon">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Data Privacy Guarantee:</strong> Your mobile contact number is exclusively utilized for queue sequencing notices and room summons. We never transmit promotional material or release intake metrics to third parties.
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Need Assistance Banner -->
+        <section class="assistance-card">
+          <div class="assistance-left">
+            <div class="assist-icon-circle">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                <line x1="12" x2="12.01" y1="17" y2="17"/>
+              </svg>
+            </div>
+            <div class="assist-text">
+              <strong>Need assistance checking in?</strong>
+              <span>Speak to Reception Desk A or request wheelchair and translation escort.</span>
+            </div>
+          </div>
+          <div class="ext-pill">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Ext. x4901
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT COLUMN: STATS, STANDARDS & BANNER -->
+      <div class="right-col">
+        
+        <!-- Reliability Card -->
+        <section class="card reliability-card">
+          <div class="rel-header">
+            <span class="rel-title">SOUTH PAVILION RELIABILITY</span>
+            <span class="audit-tag">Today's Audit</span>
+          </div>
+
+          <div class="index-row">
+            <div class="donut-wrap">
+              <svg viewBox="0 0 36 36">
+                <path class="donut-circle-bg" fill="none" stroke-width="3.5" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path class="donut-circle-val" fill="none" stroke-width="3.5" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              </svg>
+              <span class="donut-text">92%</span>
+            </div>
+            <div class="index-content">
+              <strong>Queue Transparency Index</strong>
+              <p>92% of scheduled arrivals seen within 8 minutes of target pass window.</p>
+            </div>
+          </div>
+
+          <!-- Triple Pill Row -->
+          <div class="stats-row">
+            <div class="stat-pill">
+              <span class="stat-label">IN QUEUE</span>
+              <strong class="stat-val">18</strong>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-label">CALLED</span>
+              <strong class="stat-val">42</strong>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-label">PACING</span>
+              <strong class="stat-val smooth">Smooth</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- The CalmWait Waiting Standard -->
+        <section class="card standards-card">
+          <div class="std-header">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+              <path d="M2 12h20"/>
+            </svg>
+            The CalmWait Waiting Standard
+          </div>
+
+          <ul class="std-list">
+            <li class="std-item">
+              <div class="std-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="std-text">
+                <h4>Predictable, Respectful Waiting</h4>
+                <p>Real-time queue tracking, accurate doctor pacing updates, and zero surprise waiting room leaps. You always know your exact sequence.</p>
+              </div>
+            </li>
+
+            <li class="std-item">
+              <div class="std-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+                  <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+                  <line x1="6" x2="6" y1="2" y2="4"/>
+                  <line x1="10" x2="10" y1="2" y2="4"/>
+                  <line x1="14" x2="14" y1="2" y2="4"/>
+                </svg>
+              </div>
+              <div class="std-text">
+                <h4>Step-Out Freedom</h4>
+                <p>Activate a safe 15m or 30m leave pass from your phone to grab a tea in the atrium or visit the pharmacy without forfeiting your spot.</p>
+              </div>
+            </li>
+
+            <li class="std-item">
+              <div class="std-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                  <line x1="3" x2="21" y1="3" y2="21"/>
+                </svg>
+              </div>
+              <div class="std-text">
+                <h4>Privacy First &amp; HIPAA Compliant</h4>
+                <p>No loud loudspeakers blaring diagnoses and no public display screens listing medical names. Verified anonymized tokens protect your dignity.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Healing Environment Photo Banner -->
+        <div class="photo-banner">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="Hospital Healing Courtyard Atrium" />
+          <div class="photo-overlay">
+            <span class="photo-subtitle">SOUTH PAVILION HEALING ENVIRONMENT</span>
+            <div class="photo-title">Serene Waiting Spaces with Courtyard Garden Access</div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ================= BOTTOM LEGAL FOOTER ================= -->
+  <footer class="portal-footer">
+    <div class="footer-badges">
+      <div class="footer-badge">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+          <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        256-Bit SSL Encrypted
+      </div>
+      <div class="footer-badge">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        HIPAA Certified &amp; Compliant
+      </div>
+      <div class="footer-badge">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        EHR Protected Access
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <div class="footer-lang">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" x2="22" y1="12" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        English (US)
+      </div>
+      <span>&copy; 2024 CalmWait Healthcare Systems.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
