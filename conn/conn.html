@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CalmWait - Reception Staff Operations Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../global/global.css">
+  <link rel="stylesheet" href="console.css">
+</head>
+<body class="page-console">
+
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <div class="brand-icon">✚</div>
+          <div class="brand-text">
+            <h1>CalmWait</h1>
+            <span>Reception Desk A</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section-label">Clinic Operations</div>
+
+        <nav class="nav-list">
+          <a href="../conn/conn.html" class="nav-item active">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span>Live Queue</span>
+          </a>
+          <a href="../conn/conn.html#doctor-pacing" class="nav-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            <span>Doctor Pacing &amp; Rooms</span>
+          </a>
+          <a href="../notification/notification.html" class="nav-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <span>Patient Communications</span>
+          </a>
+          <a href="../anal/anal.html" class="nav-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            <span>Analytics &amp; Reports</span>
+          </a>
+          <a href="../pro/pro.html" class="nav-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            <span>Patient Profile</span>
+          </a>
+                  <a href="../index.html" class="nav-item">Temporary Leave</a>
+          <a href="../login/login.html" class="nav-item">Patient Login</a></nav>
+      </div>
+
+      <!-- Staff Station Status Card -->
+      <div class="sidebar-staff-card">
+        <div class="staff-online-status">
+          <span class="live-pulse-dot"></span>
+          <strong>Console Online</strong>
+          <span class="pavilion-tag">South Pav.</span>
+        </div>
+        <p class="staff-role">Reception Desk A</p>
+        <span class="staff-shift">Shift: Morning • Nurse Henderson</span>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- Top Utility Header Bar -->
+      <header class="utility-bar">
+        <div class="doctor-quick-status">
+          <button class="btn btn-doctor-select" type="button">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            <span>Dr. S. Mehta (General Medicine – Room 3)</span>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          
+          <div class="telemetry-badges-row">
+            <span class="badge-chip chip-cyan">● 12 waiting</span>
+            <span class="badge-chip chip-orange">● 3 stepped out</span>
+            <span class="badge-chip chip-blue">● 1 in room</span>
+          </div>
+        </div>
+
+        <div class="header-right-actions">
+          <div class="header-clock-box">
+            <strong>10:43 AM</strong>
+            <small>Today, Oct 24</small>
+          </div>
+          <button class="btn btn-scan-shortcut" type="button">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            <span>Scan ticket</span>
+          </button>
+          <div class="profile-avatar">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- Live Gateway Connectivity Ribbon -->
+      <div class="connectivity-ribbon">
+        <div class="ribbon-items-flow">
+          <span class="conn-item"><span class="conn-dot"></span> Sync Active</span>
+          <span class="conn-sep">•</span>
+          <span class="conn-item">Connected to Gateway South-Desk-A</span>
+          <span class="conn-sep">•</span>
+          <span class="conn-item">Next patient app push cycle in <strong>3s</strong></span>
+          <span class="conn-sep">•</span>
+          <span class="conn-item">Reception Mode: <strong>Unlocked</strong></span>
+          <span class="conn-sep">•</span>
+          <span class="conn-item">Station: <strong>PC-04</strong></span>
+        </div>
+      </div>
+
+      <!-- Main Stream Operations Header -->
+      <section class="operations-stream-header">
+        <div class="stream-title-group">
+          <div class="breadcrumb-stream">LIVE QUEUE CONSOLE • South Pavilion • Desk A</div>
+          <h2>Clinic Patient Stream</h2>
+        </div>
+
+        <div class="stream-header-actions">
+          <button class="btn btn-call-next" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <span>Call Next (A-21)</span>
+          </button>
+          <button class="btn btn-action-outline" type="button">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <span>Delay Blast</span>
+          </button>
+          <button class="btn btn-action-outline" type="button">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Triage Override</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Fast Keyboard Shortcuts Bar -->
+      <div class="fast-keybinds-bar">
+        <span class="keybind-lead">FAST KEY BINDS:</span>
+        <div class="keybind-list">
+          <span class="key-chip"><kbd>P</kbd> Clinical Priority</span>
+          <span class="key-chip"><kbd>D</kbd> Send Delay Blast</span>
+          <span class="key-chip"><kbd>C</kbd> Call Next Patient</span>
+          <span class="key-chip"><kbd>M</kbd> Move Position</span>
+        </div>
+        <div class="autodial-tag">
+          AUTO-DIAL PRESET: <strong>#01150</strong> Consultation On
+        </div>
+      </div>
+
+      <!-- Operational KPI Metrics (4 Cards) -->
+      <section class="ops-kpi-row">
+        <!-- KPI 1 -->
+        <article class="card kpi-card">
+          <div class="kpi-head">
+            <span class="kpi-title">WAITING IN PAVILION</span>
+            <svg class="kpi-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+          </div>
+          <div class="kpi-num-row">
+            <h3>12</h3>
+            <span class="kpi-sub">/ 16 seats taken</span>
+          </div>
+          <div class="kpi-footer-status">
+            <span class="text-green">8 on schedule</span>
+            <span class="text-orange">4 approaching buffer</span>
+          </div>
+        </article>
+
+        <!-- KPI 2 -->
+        <article class="card kpi-card">
+          <div class="kpi-head">
+            <span class="kpi-title">STEPPED OUT (HELD)</span>
+            <svg class="kpi-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          </div>
+          <div class="kpi-num-row">
+            <h3>3</h3>
+            <span class="kpi-sub">active safe passes</span>
+          </div>
+          <div class="kpi-footer-status">
+            <span class="text-teal">2 within perimeter</span>
+            <span class="text-orange">1 returning now</span>
+          </div>
+        </article>
+
+        <!-- KPI 3 -->
+        <article class="card kpi-card">
+          <div class="kpi-head">
+            <span class="kpi-title">AVERAGE WAIT NOW</span>
+            <svg class="kpi-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          </div>
+          <div class="kpi-num-row">
+            <h3>~25</h3>
+            <span class="kpi-unit">min</span>
+            <span class="kpi-sub-right">max-time: 39m</span>
+          </div>
+          <div class="kpi-footer-status">
+            <span>Pacing: <strong>Nominal</strong></span>
+            <span>Target SLA: &lt; 30m</span>
+          </div>
+        </article>
+
+        <!-- KPI 4 -->
+        <article class="card kpi-card">
+          <div class="kpi-head">
+            <span class="kpi-title">PRIORITY TRIAGE CASES</span>
+            <svg class="kpi-icon text-purple" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <div class="kpi-num-row">
+            <h3>2</h3>
+            <span class="kpi-sub">flagged</span>
+          </div>
+          <div class="kpi-footer-status">
+            <span class="text-purple">1 clinical urgent</span>
+            <span>1 mobility aid</span>
+          </div>
+        </article>
+      </section>
+
+      <!-- Center Split Area: Queue Table vs Right Control Cards -->
+      <div class="operations-split-grid">
+        
+        <!-- Left: Queue Table & Boarding Pass Stub -->
+        <div class="table-stream-col">
+
+          <div class="card queue-table-card">
+            
+            <!-- Table Controls Row -->
+            <div class="table-top-controls">
+              <div class="filter-tabs-pills" role="tablist">
+                <button class="pill-tab active" type="button">All Patients (12)</button>
+                <button class="pill-tab" type="button">Waiting in Pavilion (7)</button>
+                <button class="pill-tab" type="button">Stepped Out (3)</button>
+                <button class="pill-tab" type="button">Priority Only (2)</button>
+              </div>
+
+              <div class="table-search-actions">
+                <div class="search-input-wrap">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  <input type="text" placeholder="Search token, name, or phone...">
+                </div>
+                <button class="btn btn-table-tool" type="button">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                  Filters
+                </button>
+                <button class="btn btn-table-tool" type="button">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  Export
+                </button>
+              </div>
+            </div>
+
+            <!-- Patient Table -->
+            <div class="stream-table-container">
+              <table class="stream-table">
+                <thead>
+                  <tr>
+                    <th>TOKEN</th>
+                    <th>PATIENT</th>
+                    <th>STATUS &amp; STAGE</th>
+                    <th>CHECK-IN</th>
+                    <th>WAIT</th>
+                    <th>ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <!-- Row 1: In Consultation -->
+                  <tr class="row-consulting">
+                    <td>
+                      <span class="token-cell-pill teal">A-20</span>
+                    </td>
+                    <td>
+                      <div class="p-name-cell">
+                        <strong>Elena R.</strong>
+                        <small>General Checkup • Self-Kiosk</small>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="status-cell">
+                        <span class="badge-status-cyan">In Consultation</span>
+                        <small>Room 3 • 8m elapsed (target 12m)</small>
+                      </div>
+                    </td>
+                    <td class="time-cell">10:12 AM</td>
+                    <td class="wait-cell">31m</td>
+                    <td>
+                      <button class="btn btn-cell-action secondary" type="button">Finish</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2: Currently Calling -->
+                  <tr class="row-calling">
+                    <td>
+                      <span class="token-cell-pill green">A-21</span>
+                    </td>
+                    <td>
+                      <div class="p-name-cell">
+                        <strong>Marcus T.</strong>
+                        <small>Follow-up Lab Review</small>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="status-cell">
+                        <span class="badge-status-green">Calling / Ready</span>
+                        <small>Doorway monitor broadcast active</small>
+                      </div>
+                    </td>
+                    <td class="time-cell">10:15 AM</td>
+                    <td class="wait-cell">28m</td>
+                    <td>
+                      <button class="btn btn-cell-action primary" type="button">Re-chime</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3: Acute Priority -->
+                  <tr class="row-priority">
+                    <td>
+                      <span class="token-cell-pill purple">A-22</span>
+                    </td>
+                    <td>
+                      <div class="p-name-cell">
+                        <strong>Sara K.</strong>
+                        <span class="triage-tag">Triage Tier 2 • Pre-vitals Taken</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="status-cell">
+                        <span class="badge-status-purple">Acute Clinical Priority</span>
+                        <small>Acute clinical priority • Next slot</small>
+                      </div>
+                    </td>
+                    <td class="time-cell">10:20 AM</td>
+                    <td class="wait-cell">23m</td>
+                    <td>
+                      <button class="btn btn-cell-action purple-btn" type="button">Send to R3</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 4: Stepped Out -->
+                  <tr>
+                    <td>
+                      <span class="token-cell-pill slate">A-23</span>
+                    </td>
+                    <td>
+                      <div class="p-name-cell">
+                        <strong>Vikram S.</strong>
+                        <small>Prescription Refill • App Registered</small>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="status-cell">
+                        <span class="badge-status-teal">Stepped Out • Protected Hold</span>
+                        <small>Return by 11:00 AM (Hold auto-expires 11:20)</small>
+                      </div>
+                    </td>
+                    <td class="time-cell">10:24 AM</td>
+                    <td class="wait-cell">19m</td>
+                    <td>
+                      <button class="btn btn-cell-action outline" type="button">Ping</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 5: In Lounge -->
+                  <tr>
+                    <td>
+                      <span class="token-cell-pill slate">A-24</span>
+                    </td>
+                    <td>
+                      <div class="p-name-cell">
+                        <strong>Aarav S.</strong>
+                        <small>Pediatric Consultation (Minor)</small>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="status-cell">
+                        <span class="badge-status-blue">Waiting in Lounge</span>
+                        <small>Est. call ~10:48 AM • Position #4</small>
+                      </div>
+                    </td>
+                    <td class="time-cell">10:26 AM</td>
+                    <td class="wait-cell">17m</td>
+                    <td>
+                      <button class="btn btn-cell-action outline" type="button">Priority</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 6: In Lounge -->
+                  <tr>
+                    <td>
+                      <span class="token-cell-pill slate">A-25</span>
+                    </td>
+                    <td>
+                      <div class="p-name-cell">
+                        <strong>Priya N.</strong>
+                        <small>Annual Health Exam • Kiosk</small>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="status-cell">
+                        <span class="badge-status-blue">Waiting in Lounge</span>
+                        <small>Est. call ~11:00 AM • Position #5</small>
+                      </div>
+                    </td>
+                    <td class="time-cell">10:31 AM</td>
+                    <td class="wait-cell">12m</td>
+                    <td>
+                      <button class="btn btn-cell-action outline" type="button">Priority</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 7: Overdue / Grace Threshold -->
+                  <tr class="row-overdue">
+                    <td>
+                      <span class="token-cell-pill amber">A-26</span>
+                    </td>
+                    <td>
+                      <div class="p-name-cell">
+                        <strong>David L.</strong>
+                        <span class="overdue-tag">Hold Threshold Overdue</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="status-cell">
+                        <span class="badge-status-amber">Stepped Out • Grace +9m</span>
+                        <small>Auto-moved 3 spots down to protect queue pacing</small>
+                      </div>
+                    </td>
+                    <td class="time-cell">10:35 AM</td>
+                    <td class="wait-cell text-amber">8m</td>
+                    <td>
+                      <button class="btn btn-cell-action amber-btn" type="button">Restore</button>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Table Footer -->
+            <div class="table-footer-status">
+              <span>Showing 7 of 12 queued patients • Auto-syncing every 5s</span>
+              <span class="hipaa-note">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                HIPAA Privacy Tokenization Active
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Bottom Active Boarding Pass Telemetry Stub -->
+          <article class="card active-boarding-telemetry">
+            <div class="telemetry-stub-header">
+              <div class="stub-title-left">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                <strong>Active Boarding Pass Telemetry</strong>
+              </div>
+              <span class="badge-kiosk-match">Kiosk Print Match</span>
+            </div>
+
+            <div class="stub-content-split">
+              <!-- Left Stub Information -->
+              <div class="stub-left-info">
+                <div class="stub-tag-row">
+                  <span class="stub-serial">BOARDING PASS STUB #CP-8201</span>
+                  <div class="stub-calling-pill">
+                    <span class="token-lg">A-21</span>
+                    <small>CURRENTLY CALLING</small>
+                  </div>
+                </div>
+                <h4>Marcus T. (Token A-21)</h4>
+                <p class="stub-desc">General Practice follow-up • Bloodwork review</p>
+                <div class="stub-meta-triplet">
+                  <div>
+                    <span>TARGET</span>
+                    <strong>Room 3</strong>
+                  </div>
+                  <div>
+                    <span>PHYSICIAN</span>
+                    <strong>Dr. S. Mehta</strong>
+                  </div>
+                  <div>
+                    <span>WAIT ELAPSED</span>
+                    <strong>28 min</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Doorway QR Pass -->
+              <div class="stub-right-qr">
+                <div class="qr-label-row">
+                  <span>QR DOORWAY PASS</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                </div>
+                <div class="door-qr-box">
+                  <svg class="door-qr-svg" viewBox="0 0 80 80">
+                    <rect x="5" y="5" width="22" height="22" rx="2" fill="#1d2939" />
+                    <rect x="9" y="9" width="14" height="14" rx="1" fill="#ffffff" />
+                    <rect x="13" y="13" width="6" height="6" fill="#1d2939" />
+                    <rect x="53" y="5" width="22" height="22" rx="2" fill="#1d2939" />
+                    <rect x="57" y="9" width="14" height="14" rx="1" fill="#ffffff" />
+                    <rect x="61" y="13" width="6" height="6" fill="#1d2939" />
+                    <rect x="5" y="53" width="22" height="22" rx="2" fill="#1d2939" />
+                    <rect x="9" y="57" width="14" height="14" rx="1" fill="#ffffff" />
+                    <rect x="13" y="61" width="6" height="6" fill="#1d2939" />
+                    <!-- Dots -->
+                    <rect x="32" y="8" width="6" height="12" fill="#1d2939" />
+                    <rect x="42" y="8" width="8" height="6" fill="#1d2939" />
+                    <rect x="34" y="24" width="14" height="6" fill="#1d2939" />
+                    <rect x="8" y="34" width="12" height="6" fill="#1d2939" />
+                    <rect x="24" y="34" width="6" height="14" fill="#1d2939" />
+                    <rect x="34" y="34" width="20" height="8" fill="#1d2939" />
+                    <rect x="60" y="34" width="8" height="16" fill="#1d2939" />
+                    <rect x="34" y="54" width="8" height="18" fill="#1d2939" />
+                    <rect x="46" y="58" width="10" height="8" fill="#1d2939" />
+                    <rect x="60" y="54" width="8" height="8" fill="#1d2939" />
+                    <rect x="46" y="68" width="20" height="6" fill="#1d2939" />
+                  </svg>
+                </div>
+                <small class="qr-caption">Tap room door sensor or present at desk</small>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Right Rail: Scan Returning Patient, Doctor Pacing, Clinical Priority Override -->
+        <aside class="controls-rail-col">
+          
+          <!-- Card 1: Scan Returning Patient -->
+          <article class="card scan-patient-card">
+            <div class="control-card-header">
+              <div class="ctrl-title-group">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                <h3>Scan Returning Patient</h3>
+              </div>
+              <kbd class="key-indicator">[S]</kbd>
+            </div>
+            <p class="ctrl-subhead">Confirm patient return in one step. Auto-restores pavilion slot.</p>
+
+            <!-- Scanner Viewfinder Simulation -->
+            <div class="scanner-viewfinder">
+              <div class="scanner-laser-line"></div>
+              <div class="reticle-box">
+                <span class="corner tl"></span>
+                <span class="corner tr"></span>
+                <span class="corner bl"></span>
+                <span class="corner br"></span>
+                <span class="reticle-text">SCAN PATIENT PASS</span>
+              </div>
+              <small class="scanner-hint">Camera stream active • Desk-Desk A Optical</small>
+            </div>
+
+            <!-- Manual Token Lookup Row -->
+            <div class="manual-token-row">
+              <input type="text" value="A-24" placeholder="Token #">
+              <button class="btn btn-lookup" type="button">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                Lookup
+              </button>
+            </div>
+
+            <!-- Active Scanned Result Box -->
+            <div class="scanned-result-box">
+              <div class="result-header-line">
+                <span class="result-lbl">ACTIVE SCANNED RESULT</span>
+                <span class="badge-ontime">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Returned on-time
+                </span>
+              </div>
+
+              <h4>Token A-24 • Rahul S. is back</h4>
+              <p class="result-body">
+                Safe pass expired at 11:00 AM • Scanned at 11:02 AM • <strong>3m buffer remaining</strong>
+              </p>
+
+              <div class="scanned-actions">
+                <button class="btn btn-confirm-return" type="button">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Confirm return
+                </button>
+                <button class="btn btn-override-slot" type="button">Keep original place (override)</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Doctor Pacing & Telemetry -->
+          <article class="card pacing-telemetry-card" id="doctor-pacing">
+            <div class="control-card-header">
+              <div class="ctrl-title-group">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                <h3>Doctor Pacing &amp; Telemetry</h3>
+              </div>
+              <span class="live-stream-badge">Live Stream</span>
+            </div>
+
+            <div class="doc-status-overview">
+              <strong>Dr. S. Mehta • Room 3</strong>
+              <span class="nominal-tag">Pacing: <strong>nominal</strong></span>
+            </div>
+
+            <!-- Status Toggles Grid -->
+            <div class="status-toggles-grid">
+              <button class="toggle-cell" type="button">Available</button>
+              <button class="toggle-cell active" type="button">In Consult</button>
+              <button class="toggle-cell" type="button">On Break</button>
+              <button class="toggle-cell" type="button">Delayed</button>
+            </div>
+
+            <!-- In-room Patient Readout -->
+            <div class="inroom-readout">
+              <span class="inroom-lbl">CURRENT PATIENT IN ROOM</span>
+              <div class="inroom-name-row">
+                <strong>A-20 Elena R.</strong>
+                <span class="inroom-time">8m <small>of 12m</small></span>
+              </div>
+            </div>
+
+            <!-- Reason for Delay Dropdown Simulation -->
+            <div class="transition-reason-block">
+              <label>REASON FOR DELAY / TRANSITION MODE</label>
+              <div class="select-simulation">
+                <span>Specimen Handoff &amp; Sanitization</span>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+
+            <div class="next-chime-time-row">
+              <span>EXPECTED BACK / NEXT DOOR CHIME</span>
+              <strong>10:48 AM</strong>
+            </div>
+
+            <div class="patient-display-note">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <span>Patients see this reason live on their CalmWait phone passes &amp; pavilion overhead displays.</span>
+            </div>
+
+            <button class="btn btn-update-room-telemetry" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+              Update Room Telemetry
+            </button>
+          </article>
+
+          <!-- Card 3: Clinical Priority Override -->
+          <article class="card priority-override-card">
+            <div class="control-card-header">
+              <div class="ctrl-title-group">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <h3>Clinical Priority Override</h3>
+              </div>
+              <kbd class="key-indicator">[P]</kbd>
+            </div>
+            <p class="ctrl-subhead">Audited clinical re-sequencing. Automatic push to next-in-line with reassuring patient copy.</p>
+
+            <!-- Patient Selector -->
+            <div class="override-field-block">
+              <label>SELECTED QUEUE PATIENT</label>
+              <div class="select-simulation">
+                <span>Token A-24 • Aarav S. (Pos #4)</span>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+
+            <!-- Audit Reason Checklist -->
+            <div class="override-reasons-block">
+              <label>REQUIRED REASON FOR AUDIT LOG</label>
+              <div class="audit-radio-list">
+                <label class="radio-label active">
+                  <input type="radio" name="audit-reason" checked>
+                  <span>Urgent medical need (Triage Tier 2/3)</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="audit-reason">
+                  <span>Elderly, mobility, or accessibility need</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="audit-reason">
+                  <span>Emergency departmental referral handoff</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Impact Preview Box -->
+            <div class="impact-preview-box">
+              <div class="impact-top-metric">
+                <div class="impact-title-left">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                  <span>PRIORITY IMPACT PREVIEW</span>
+                </div>
+                <span class="badge-delay-calc">+6 to +8m / case</span>
+              </div>
+              <div class="impact-calc-row">
+                <span>Estimated impact on waiting patients:</span>
+                <strong>+8 to +12 min per case</strong>
+              </div>
+            </div>
+
+            <!-- Message Preview -->
+            <div class="patient-preview-box">
+              <span class="preview-lbl">THIS MESSAGE WILL BE SHOWN TO PATIENTS:</span>
+              <p>&ldquo;Emergency walk-in. Estimated impact +8 to +12 minutes. Your position remains protected.&rdquo;</p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="override-actions">
+              <button class="btn btn-apply-priority" type="button">Apply Priority Position</button>
+              <button class="btn btn-cancel-override" type="button">Cancel</button>
+            </div>
+          </article>
+
+        </aside>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+

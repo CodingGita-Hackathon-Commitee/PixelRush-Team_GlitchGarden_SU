@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CalmWait - Patient Profile & Care Preferences</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Link to External Stylesheet -->
+  <link rel="stylesheet" href="../global/global.css">
+  <link rel="stylesheet" href="profie.css">
+</head>
+<body class="page-profile">
+
+  <div class="app-layout">
+    
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="18" height="18" x="3" y="3" rx="4"/>
+            <path d="M12 8v8"/>
+            <path d="M8 12h8"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h2>CalmWait</h2>
+          <span>SOUTH PAVILION CLINIC</span>
+        </div>
+      </div>
+
+      <span class="sidebar-section-title">CLINICAL OPERATIONS &amp; INTELLIGENCE</span>
+
+      <nav class="nav-links">
+        <a href="../conn/conn.html" class="nav-btn">Live Queue</a>
+        <a href="../conn/conn.html#doctor-pacing" class="nav-btn">Doctor Pacing &amp; Rooms</a>
+        <a href="../notification/notification.html" class="nav-btn">Patient Communications</a>
+        <a href="../anal/anal.html" class="nav-btn active">Analytics &amp; Reports</a>
+        <a href="../index.html" class="nav-btn">Temporary Leave</a>
+        <a href="../login/login.html" class="nav-btn">Patient Login</a>        <a href="../visit/visit.html" class="nav-btn">Visit Pass</a>
+        <a href="../que/que.html" class="nav-btn">Queue Status</a>
+        <a href="../progress/progress.html" class="nav-btn">Journey Progress</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="status-badge-card">
+          <div class="status-badge-header">
+            <span class="dot-pulse"></span>
+            <span>Live Sync Active</span>
+            <span class="station-online">• Station Online</span>
+          </div>
+          <p>Director &amp; Ops Telemetry</p>
+          <div class="telemetry-detail">Sync Latency: 24ms • Node A-South</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      
+      <!-- Top Header Bar -->
+      <header class="top-header">
+        <div class="top-header-left">
+          <select class="dept-selector" aria-label="Filter Department">
+            <option>All Departments (Today)</option>
+            <option>General Medicine</option>
+            <option>Cardiology Pavilion</option>
+            <option>Laboratory Services</option>
+          </select>
+
+          <div class="metrics-pill">
+            <span class="metric-item">
+              <span class="metric-dot green"></span>
+              <strong>94%</strong> on-time rate
+            </span>
+            <span class="metric-item">
+              <span class="metric-dot green"></span>
+              <strong>14m</strong> avg wait
+            </span>
+            <span class="metric-item">
+              <span class="metric-dot orange"></span>
+              <strong>2</strong> pacing alerts
+            </span>
+          </div>
+        </div>
+
+        <div class="top-header-right">
+          <div class="telemetry-time">
+            <strong>10:43 AM</strong>
+            <span>Oct 24 • Live Telemetry</span>
+          </div>
+          <a href="../anal/anal.html" class="btn-export">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" x2="12" y1="15" y2="3"/>
+            </svg>
+            Export Reports
+          </a>
+        </div>
+      </header>
+
+      <!-- Page Title Banner -->
+      <section class="page-title-banner">
+        <div>
+          <div class="meta-hipaa">
+            <span class="dot-cyan"></span>
+            <span>HIPAA Verified Identity • MRN: CW-8842-RX</span>
+          </div>
+          <h1>Patient Profile &amp; Care Preferences</h1>
+          <p>Manage your contact details, waiting-room sensory accessibility needs, real-time summons notifications, and active clinic credentials.</p>
+        </div>
+
+        <div class="banner-actions">
+          <a href="../assets/patient-info.pdf" download="calmwait-patient-info.pdf" class="btn btn-outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" x2="12" y1="15" y2="3"/>
+            </svg>
+            Download Patient Info (PDF)
+          </a>
+          <button type="button" class="btn btn-teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-icon">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Save Changes
+          </button>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        
+        <!-- ================= LEFT COLUMN ================= -->
+        <div class="grid-col">
+          
+          <!-- Card A: Contact & Demographics -->
+          <div class="card">
+            <div class="profile-hero-row">
+              <div class="profile-avatar-wrap">
+                <div class="avatar-circle">
+                  <span>ER</span>
+                  <span class="avatar-online-dot"></span>
+                </div>
+                <div class="profile-identity">
+                  <h3>
+                    Elena Rostova
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </h3>
+                  <div class="profile-meta">
+                    <span>DOB: <strong>Mar 14, 1986</strong> (38y)</span>
+                    <span>•</span>
+                    <span class="tier-badge">Tier 1 Verified</span>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#profile-form-grid" class="action-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                  <rect width="18" height="14" x="3" y="5" rx="2"/>
+                  <path d="M7 15h4M15 15h2M7 11h2"/>
+                </svg>
+                Update ID
+              </a>
+            </div>
+
+            <!-- Form Fields -->
+            <div class="form-grid" id="profile-form-grid">
+              <div class="form-group">
+                <label class="field-label">Legal Full Name</label>
+                <input type="text" class="input-box" value="Elena Mariya Rostova" />
+              </div>
+
+              <div class="form-group">
+                <label class="field-label">Preferred Call Name</label>
+                <input type="text" class="input-box" value="Elena" />
+                <span class="field-sublabel">Used by intake nurses &amp; room summons</span>
+              </div>
+
+              <div class="form-group">
+                <div class="form-label-row">
+                  <label class="field-label">Mobile Number</label>
+                  <span class="badge-verified-sms">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="sms-icon">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    Verified SMS
+                  </span>
+                </div>
+                <div class="input-with-icon">
+                  <input type="text" class="input-box" value="+1 (555) 234-8901" />
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="field-icon">
+                    <rect width="14" height="20" x="5" y="2" rx="2"/>
+                    <path d="M12 18h.01"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="field-label">Email Address</label>
+                <div class="input-with-icon">
+                  <input type="email" class="input-box" value="elena.rostova@healthm..." />
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="field-icon">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="form-group col-span-2">
+                <label class="field-label">Emergency Contact &amp; Relation</label>
+                <input type="text" class="input-box" value="Mark Rostova — Spouse • Cell: (555) 882-1920" />
+              </div>
+
+              <div class="form-group col-span-2">
+                <label class="field-label">Primary Consultation Language</label>
+                <select class="input-box select-dropdown">
+                  <option selected>English (United States)</option>
+                  <option>Español</option>
+                  <option>Français</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card B: Waiting-Room & Sensory Accommodations -->
+          <div class="card">
+            <div class="card-header-with-badge">
+              <div class="header-with-icon">
+                <div class="card-icon-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 3a9 9 0 0 0-9 9c0 4.97 4.03 9 9 9s9-4.03 9-9a9 9 0 0 0-9-9Z"/>
+                    <path d="M12 8a4 4 0 0 0-4 4c0 2.21 1.79 4 4 4s4-1.79 4-4a4 4 0 0 0-4-4Z"/>
+                  </svg>
+                </div>
+                <div class="header-text">
+                  <h3>Waiting-Room &amp; Sensory Accommodations</h3>
+                  <p>CalmWait adjusts waiting ambient levels, escort routing, and companion seating.</p>
+                </div>
+              </div>
+              <span class="badge-pill-soft">Care Profile</span>
+            </div>
+
+            <!-- Accommodation Toggles (Pure CSS) -->
+            <div class="toggles-list">
+              <div class="toggle-row">
+                <div class="toggle-info">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="toggle-icon">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                    <line x1="12" x2="12" y1="19" y2="22"/>
+                  </svg>
+                  <div class="toggle-text">
+                    <strong>Low-Sensory Lounge Preference</strong>
+                    <p>Mutes public paging chimes, redirects your pass to South Alcove Quiet Pods, and turns notifications into vibration alerts.</p>
+                  </div>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" checked />
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <div class="toggle-row">
+                <div class="toggle-info">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="toggle-icon">
+                    <circle cx="12" cy="4" r="2"/>
+                    <path d="m5 22 5-9 4 3 3 6"/>
+                    <path d="M15 11l-3-4-4 2"/>
+                  </svg>
+                  <div class="toggle-text">
+                    <strong>Mobility &amp; Wheelchair Escort Assistance</strong>
+                    <p>South Pavilion concierge escorts will be assigned to transport you from check-in Bay B directly into the examination suite.</p>
+                  </div>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <div class="toggle-row">
+                <div class="toggle-info">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="toggle-icon">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                  <div class="toggle-text">
+                    <strong>Clinical Medical Interpreter</strong>
+                    <p>Pre-assigns an in-person or live tele-interpreter to your exam room before Dr. Thorne begins consultation.</p>
+                  </div>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Companion Waiting Seating Allocation -->
+            <span class="section-subtitle-label">Companion Waiting Seating Allocation</span>
+            <div class="seating-radio-group">
+              <label class="seating-radio-label">
+                <input type="radio" name="companion_seat" value="alone" />
+                <div class="seating-tile">
+                  <span class="radio-circle-indicator"></span>
+                  <strong>Waiting Alone</strong>
+                  <span>Single Quiet Seat</span>
+                </div>
+              </label>
+
+              <label class="seating-radio-label">
+                <input type="radio" name="companion_seat" value="plus1" checked />
+                <div class="seating-tile">
+                  <span class="radio-circle-indicator"></span>
+                  <strong>+1 Companion</strong>
+                  <span>Paired Chairs [Pod 3]</span>
+                </div>
+              </label>
+
+              <label class="seating-radio-label">
+                <input type="radio" name="companion_seat" value="mobility" />
+                <div class="seating-tile">
+                  <span class="radio-circle-indicator"></span>
+                  <strong>Mobility Bay</strong>
+                  <span>Wide Corridor Space</span>
+                </div>
+              </label>
+            </div>
+
+            <span class="section-subtitle-label">Clinic Access &amp; Sensory Notes</span>
+            <div class="notes-box">
+              Mild photophobia: prefers dimmed lounge seating. Non-speaking accompaniment: spouse Mark will join inside Room 04.
+            </div>
+          </div>
+
+          <!-- Card C: Queue Alerts & Summons Routing -->
+          <div class="card">
+            <div class="card-header-with-badge">
+              <div class="header-with-icon">
+                <div class="card-icon-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+                    <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+                  </svg>
+                </div>
+                <div class="header-text">
+                  <h3>Queue Alerts &amp; Summons Routing</h3>
+                  <p>Choose how the clinic signals when your turn approaches.</p>
+                </div>
+              </div>
+              <button type="button" class="audio-test-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                </svg>
+                Test Chime
+              </button>
+            </div>
+
+            <div class="alerts-list">
+              <label class="alert-item-label">
+                <div class="alert-item-left">
+                  <div class="alert-badge-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect width="18" height="14" x="3" y="5" rx="2"/>
+                      <path d="M8 9h8M8 13h5"/>
+                    </svg>
+                  </div>
+                  <div class="alert-item-text">
+                    <strong>Direct SMS Summons</strong>
+                    <span>Sends 10-min countdown, 3-min door readiness alert, &amp; room door code.</span>
+                  </div>
+                </div>
+                <div class="custom-checkbox">
+                  <input type="checkbox" checked />
+                  <span class="checkbox-mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </span>
+                </div>
+              </label>
+
+              <label class="alert-item-label">
+                <div class="alert-item-left">
+                  <div class="alert-badge-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                      <path d="M2 12h20"/>
+                    </svg>
+                  </div>
+                  <div class="alert-item-text">
+                    <strong>Browser Sound &amp; Haptic Vibration</strong>
+                    <span>Soft two-tone gentle chime when pass moves to "Next In Line".</span>
+                  </div>
+                </div>
+                <div class="custom-checkbox">
+                  <input type="checkbox" checked />
+                  <span class="checkbox-mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </span>
+                </div>
+              </label>
+
+              <label class="alert-item-label">
+                <div class="alert-item-left">
+                  <div class="alert-badge-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                      <line x1="16" x2="8" y1="13" y2="13"/>
+                      <line x1="16" x2="8" y1="17" y2="17"/>
+                      <line x1="10" x2="8" y1="9" y2="9"/>
+                    </svg>
+                  </div>
+                  <div class="alert-item-text">
+                    <strong>Post-Visit Queue Audit &amp; Summary</strong>
+                    <span>Receives timestamps, physician notes summary, and pharmacy transit slip.</span>
+                  </div>
+                </div>
+                <div class="custom-checkbox">
+                  <input type="checkbox" checked />
+                  <span class="checkbox-mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                  </span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================= RIGHT COLUMN ================= -->
+        <div class="grid-col">
+          
+          <!-- Card 1: Active Clinic Boarding Pass (Ticket Card) -->
+          <div class="ticket-card">
+            <div class="ticket-header-band">
+              <div class="ticket-header-left">
+                <span class="ticket-dot"></span>
+                <span>ACTIVE CLINIC BOARDING PASS</span>
+              </div>
+              <span>TODAY • OCT 24</span>
+            </div>
+
+            <div class="ticket-body">
+              <div class="token-headline-row">
+                <div class="token-display-wrap">
+                  <span class="token-sub">PRIORITY TOKEN</span>
+                  <span class="token-number">A-24</span>
+                </div>
+                <div class="stage-pill">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="stage-icon">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                  </svg>
+                  <span>Vitals Ready</span>
+                </div>
+              </div>
+
+              <div class="provider-suite-grid">
+                <div>
+                  <span class="meta-box-label">PROVIDER</span>
+                  <div class="meta-box-val">Dr. Aris Thorne</div>
+                  <div class="meta-box-sub">Internal Medicine</div>
+                </div>
+
+                <div>
+                  <span class="meta-box-label">ASSIGNED SUITE</span>
+                  <div class="meta-box-val room-highlight">Room 04</div>
+                  <div class="meta-box-sub">South Pavilion East</div>
+                </div>
+              </div>
+
+              <!-- Ticket serrated divider -->
+              <div class="ticket-divider">
+                <div class="ticket-dash-line"></div>
+              </div>
+
+              <!-- Estimated call pacing box -->
+              <div class="pacing-box">
+                <div class="pacing-left">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon pacing-icon">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  <div class="pacing-text">
+                    <strong>Estimated Call In: 4 mins</strong>
+                    <span>Pacing: 1 ahead of schedule</span>
+                  </div>
+                </div>
+                <div class="pacing-time">10:48 AM</div>
+              </div>
+
+              <a href="../visit/visit.html" class="btn-ticket-action">
+                <span>Open Live Boarding Pass</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-icon">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Recent Queue Passes -->
+          <div class="card">
+            <div class="card-header-simple">
+              <div class="history-header-left">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon history-icon">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 8 14"/>
+                </svg>
+                <div>
+                  <h3>Recent Queue Passes</h3>
+                  <span>Last 90 days audit</span>
+                </div>
+              </div>
+              <a href="../que/que.html" class="action-link">View All</a>
+            </div>
+
+            <div class="history-list">
+              <div class="history-item">
+                <div class="history-item-left">
+                  <span class="history-badge">A-24</span>
+                  <div class="history-info">
+                    <strong>General Consultation</strong>
+                    <span>Today • Dr. A. Thorne</span>
+                  </div>
+                </div>
+                <div class="history-status-right">
+                  <span class="status-badge-active">
+                    Active
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="chevron-sm">
+                      <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+
+              <div class="history-item">
+                <div class="history-item-left">
+                  <span class="history-badge secondary">C-08</span>
+                  <div class="history-info">
+                    <strong>Cardiology Follow-up</strong>
+                    <span>Sep 12, 2024 • Dr. K. Patel</span>
+                  </div>
+                </div>
+                <div class="history-status-right">
+                  <div class="status-complete">
+                    <div>
+                      <span>Wait: 18m</span>
+                      <strong>Completed</strong>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="history-check-icon">
+                      <rect width="16" height="20" x="4" y="2" rx="2"/>
+                      <line x1="8" x2="16" y1="6" y2="6"/>
+                      <line x1="8" x2="16" y1="10" y2="10"/>
+                      <line x1="8" x2="12" y1="14" y2="14"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="history-item">
+                <div class="history-item-left">
+                  <span class="history-badge secondary">L-12</span>
+                  <div class="history-info">
+                    <strong>Routine Blood Panel</strong>
+                    <span>Jul 03, 2024 • Lab Bay 2</span>
+                  </div>
+                </div>
+                <div class="history-status-right">
+                  <div class="status-complete">
+                    <div>
+                      <span>Wait: 12m</span>
+                      <strong>Completed</strong>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="history-check-icon">
+                      <rect width="16" height="20" x="4" y="2" rx="2"/>
+                      <line x1="8" x2="16" y1="6" y2="6"/>
+                      <line x1="8" x2="16" y1="10" y2="10"/>
+                      <line x1="8" x2="12" y1="14" y2="14"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Security & Delegates -->
+          <div class="card">
+            <div class="card-header-simple">
+              <div class="history-header-left">
+                <div class="card-icon-badge sec-badge-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="sec-title">Security &amp; Delegates</h3>
+                  <span class="sec-subtitle">Access control &amp; clinic kiosks.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="security-rows" id="security-rows">
+              <div class="sec-row">
+                <div class="sec-row-left">
+                  <strong>Two-Factor Passcode</strong>
+                  <span>SMS code sent on new clinic kiosk check-in</span>
+                </div>
+                <span class="sec-badge-active">Active</span>
+              </div>
+
+              <div class="sec-row">
+                <div class="sec-row-left">
+                  <strong>Authorized Delegate</strong>
+                  <span>Mark Rostova (Spouse) • Live Queue Viewer</span>
+                </div>
+                <a href="#security-rows" class="action-link delegate-edit">EDIT</a>
+              </div>
+            </div>
+
+            <a href="#security-rows" class="revoke-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                <polyline points="16 17 21 12 16 7"/>
+                <line x1="21" x2="9" y1="12" y2="12"/>
+              </svg>
+              Revoke All Other Kiosk Sessions
+            </a>
+
+            <div class="hipaa-callout">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <span>CalmWait complies with Title II HIPAA Privacy Rules. Phone numbers, patient tokens, and clinic pacing telemetry are never shared with external aggregators.</span>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    </main>
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
