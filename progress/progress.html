@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CalmWait - My Progress - Patient Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../global/global.css">
+  <link rel="stylesheet" href="progress.css">
+</head>
+<body class="page-progress">
+
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <div class="brand-icon">✚</div>
+          <div class="brand-text">
+            <h1>CalmWait</h1>
+            <span>Patient Portal</span>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <a href="../visit/visit.html" class="nav-item">Visit</a>
+          <a href="../que/que.html" class="nav-item">Queue</a>
+          <a href="../progress/progress.html" class="nav-item active">Progress</a>
+          <a href="../notification/notification.html" class="nav-item">
+            <span>Alerts</span>
+            <span class="nav-badge">3</span>
+          </a>
+          <div class="nav-leave-box">
+            <span class="nav-leave-tag">Temporary Leave</span>
+            <p class="nav-leave-title">Need coffee or fresh air?</p>
+            <a href="../index.html" class="btn-leave-action">Step Out</a>
+          </div>
+                  <a href="../index.html" class="nav-item">Temporary Leave</a>
+          <a href="../login/login.html" class="nav-item">Patient Login</a>
+          <a href="../pro/pro.html" class="nav-item">Patient Profile</a></nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="location-info">
+          <div class="loc-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Main Campus</span>
+          </div>
+          <p class="loc-sub">Level 1 • South Pavilion</p>
+        </div>
+        <a href="#" class="footer-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          Assistance &amp; FAQs
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- Top Utility Header -->
+      <header class="utility-bar">
+        <div class="desk-indicator">
+          <span class="pulse-badge">
+            <span class="pulse-dot"></span>
+            Reception Desk A Online
+          </span>
+          <span class="token-top-pill">Token <strong>W-42</strong></span>
+          <span class="desk-meta">• Wait times nominal (under 12m)</span>
+        </div>
+
+        <div class="account-actions">
+          <button class="btn btn-outline-stepout" type="button">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+            Step Out
+          </button>
+          <button class="btn btn-support" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            Help / Attendant
+          </button>
+          <a href="../pro/pro.html" class="profile-avatar" aria-label="Open patient profile">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Progress Hero Header -->
+      <section class="progress-hero-header">
+        <div class="hero-left">
+          <span class="engine-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            Journey Tracking Engine
+          </span>
+          <h2>My Progress</h2>
+          <p class="hero-subtext">Track your clinical pathway in real-time from reception intake through checkout.</p>
+        </div>
+
+        <div class="hero-status-pills">
+          <span class="status-meta-pill">
+            <span class="status-dot"></span>
+            Updated 2m ago
+          </span>
+          <span class="status-meta-pill blue">
+            Pacing calibrated
+          </span>
+          <button class="btn-refresh-sm" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+            Refresh
+          </button>
+        </div>
+      </section>
+
+      <!-- Patient & Visit Identity Card -->
+      <section class="patient-id-strip">
+        <div class="patient-token-box">
+          <span class="token-prefix">A-</span>
+          <span class="token-number">24</span>
+        </div>
+
+        <div class="id-meta-item">
+          <span class="id-meta-lbl">Token Number</span>
+          <strong>Queue A</strong>
+        </div>
+
+        <div class="id-meta-item">
+          <span class="id-meta-lbl">Patient Profile</span>
+          <strong>Aarav Shah</strong>
+          <small>Adult • MRN #98204</small>
+        </div>
+
+        <div class="id-meta-item">
+          <span class="id-meta-lbl">Physician &amp; Unit</span>
+          <strong class="highlight-physician">Dr. Mehta</strong>
+          <small>Room 3 • General Med</small>
+        </div>
+
+        <div class="id-meta-item">
+          <span class="id-meta-lbl">Intake Recorded</span>
+          <strong>10:12 AM</strong>
+          <small>Arrival verified</small>
+        </div>
+
+        <div class="id-meta-item call-estimate">
+          <span class="id-meta-lbl">Estimated Call</span>
+          <strong class="call-time">~10:48 AM</strong>
+          <small>Target window ±5m</small>
+        </div>
+      </section>
+
+      <!-- 6-Stage Stepper Bar -->
+      <section class="stepper-section">
+        <div class="stepper-container">
+          <div class="stepper-track-bg"></div>
+
+          <!-- Step 1: Completed -->
+          <div class="step-node completed">
+            <div class="step-circle">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <span class="step-title">Checked In</span>
+            <span class="step-detail">10:12 AM • Kiosk 2</span>
+          </div>
+
+          <!-- Step 2: Completed -->
+          <div class="step-node completed">
+            <div class="step-circle">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <span class="step-title">Vitals Taken</span>
+            <span class="step-detail">10:20 AM • Station B</span>
+          </div>
+
+          <!-- Step 3: Current Active (Waiting) -->
+          <div class="step-node active">
+            <div class="step-circle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <span class="step-title">Waiting</span>
+            <span class="step-pill">South Pavilion</span>
+          </div>
+
+          <!-- Step 4: Upcoming -->
+          <div class="step-node pending">
+            <div class="step-circle">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            </div>
+            <span class="step-title">Consultation</span>
+            <span class="step-detail">Room 3 • Dr. Mehta</span>
+          </div>
+
+          <!-- Step 5: Diagnostics -->
+          <div class="step-node pending">
+            <div class="step-circle">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"></path></svg>
+            </div>
+            <div class="step-title-group">
+              <span class="step-title">Diagnostics</span>
+              <span class="mini-tag">IF ORDERED</span>
+            </div>
+            <span class="step-detail">Lab or Radiology</span>
+          </div>
+
+          <!-- Step 6: Checkout -->
+          <div class="step-node pending">
+            <div class="step-circle">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line></svg>
+            </div>
+            <span class="step-title">Checkout</span>
+            <span class="step-detail">Prescription &amp; Summary</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main 2-Column Clinical Layout -->
+      <div class="progress-columns-grid">
+        
+        <!-- Left Column: Current Phase & Visit Log -->
+        <div class="col-left">
+
+          <!-- Current Phase Card -->
+          <article class="card current-phase-card">
+            <div class="phase-header-bar">
+              <div class="phase-current-badge">
+                <span class="badge-tag-dark">CURRENT PHASE</span>
+                <h4>South Pavilion Lounge</h4>
+              </div>
+              <span class="ambient-pill">Lounge Ambient Comfort: Quiet &amp; Seated</span>
+            </div>
+
+            <div class="wait-range-block">
+              <span class="wait-range-lbl">ESTIMATED WAIT RANGE</span>
+              <div class="wait-time-row">
+                <h2>20–35</h2>
+                <span class="wait-mins">minutes</span>
+              </div>
+              <p class="wait-range-note">Ranges reflect thorough, attentive patient consultations rather than rigid automated slots.</p>
+            </div>
+
+            <!-- Queue Position & Room Live Feed -->
+            <div class="live-status-cards-grid">
+              <div class="feed-mini-box">
+                <div class="feed-mini-title">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path></svg>
+                  <span>QUEUE POSITION</span>
+                </div>
+                <strong>3 patients ahead</strong>
+                <small>Tokens: A-21, A-22, A-23</small>
+              </div>
+
+              <div class="feed-mini-box">
+                <div class="feed-mini-title">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                  <span>ROOM 3 LIVE FEED</span>
+                </div>
+                <strong>Consulting Token A-20</strong>
+                <small>Dr. Mehta in consultation</small>
+              </div>
+            </div>
+
+            <!-- Action Trigger Buttons -->
+            <div class="phase-actions-row">
+              <button class="btn btn-fresh-air" type="button">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 4v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                Step out for fresh air
+              </button>
+              <div class="sms-armed-pill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                SMS Chime Armed (+1 ••• 4912)
+              </div>
+            </div>
+
+            <div class="phase-footnote">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Stepping out holds your queue spot for up to 20 minutes without losing priority.</span>
+            </div>
+          </article>
+
+          <!-- Visit Pathway Log Card -->
+          <article class="card pathway-log-card">
+            <div class="log-card-header">
+              <div class="log-title">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <h3>Visit Pathway Log</h3>
+              </div>
+              <span class="milestones-tag">2 Completed Milestones</span>
+            </div>
+
+            <div class="pathway-log-timeline">
+              
+              <!-- Log Item 1: Triage & Clinical Vitals -->
+              <div class="log-item">
+                <div class="log-icon-wrap completed">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="log-content">
+                  <div class="log-head">
+                    <h4>Triage &amp; Clinical Vitals</h4>
+                    <span class="log-time">10:20 AM</span>
+                  </div>
+                  <p class="log-desc">Nurse Station B (Nurse Henderson, RN). Initial diagnostic readings charted to electronic health record.</p>
+
+                  <!-- Vitals Metric Grid -->
+                  <div class="vitals-metric-grid">
+                    <div class="vital-card">
+                      <span class="vital-lbl">BLOOD PRESSURE</span>
+                      <strong class="vital-val">122/78</strong>
+                      <span class="vital-sub normal">Normal</span>
+                    </div>
+                    <div class="vital-card">
+                      <span class="vital-lbl">HEART RATE</span>
+                      <strong class="vital-val">72 bpm</strong>
+                      <span class="vital-sub resting">Resting</span>
+                    </div>
+                    <div class="vital-card">
+                      <span class="vital-lbl">SPO2</span>
+                      <strong class="vital-val">99%</strong>
+                      <span class="vital-sub optimal">Optimal</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Log Item 2: Digital Intake Verified -->
+              <div class="log-item">
+                <div class="log-icon-wrap completed">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="log-content">
+                  <div class="log-head">
+                    <h4>Digital Intake Verified</h4>
+                    <span class="log-time">10:12 AM</span>
+                  </div>
+                  <p class="log-desc">Check-in completed at Kiosk 2. Verified insurance coverage (Blue Cross PPO) and signed treatment consent.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- South Pavilion Amenities -->
+            <div class="amenities-sub-row">
+              <span class="amenity-title">SOUTH PAVILION AMENITIES</span>
+              <div class="amenity-tags">
+                <span class="amenity-tag">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+                  CalmWait-Guest
+                </span>
+                <span class="amenity-tag">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
+                  Herbal Tea &amp; Water
+                </span>
+                <span class="amenity-tag">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                  Quiet Zone Seating
+                </span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Right Column: Upcoming Phase, Post-Consultation, Direct Assistance -->
+        <div class="col-right">
+
+          <!-- Upcoming Phase Card -->
+          <article class="card upcoming-phase-card">
+            <div class="upcoming-header-row">
+              <div>
+                <span class="phase-overline">UPCOMING PHASE</span>
+                <h3>Consultation with Dr. Mehta</h3>
+                <p class="phase-location">Room 3 • South Corridor</p>
+              </div>
+              <div class="upcoming-countdown-badge">
+                <strong>~10–15</strong>
+                <small>Min</small>
+              </div>
+            </div>
+
+            <p class="upcoming-lead">Dr. Mehta will conduct a thorough review of your symptoms and recent medical updates.</p>
+
+            <!-- What to Bring Checklist Box -->
+            <div class="checklist-card">
+              <div class="checklist-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                <strong>What to Bring Into Room 3:</strong>
+              </div>
+              <ul class="checklist-list">
+                <li>Government ID or digital boarding pass token (A-24)</li>
+                <li>List of active prescriptions and medication dosages</li>
+                <li>Specific questions or notes on symptom duration</li>
+              </ul>
+            </div>
+
+            <!-- Device Audio Alert Hint -->
+            <div class="alert-hint-box">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+              <p>Your device will play an alert chime and the hallway display boards will flash <strong>Token A-24</strong> the moment Room 3 prepares for intake.</p>
+            </div>
+          </article>
+
+          <!-- Post-Consultation & Lab Work Accordion -->
+          <article class="card labwork-card">
+            <div class="labwork-header">
+              <div class="labwork-title">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                <h4>Post-Consultation &amp; Lab Work</h4>
+              </div>
+              <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <p class="labwork-desc">If Dr. Mehta orders laboratory bloodwork or imaging scans, live indoor wayfinding directions will automatically appear here on your phone screen.</p>
+            
+            <div class="summary-status-strip">
+              <span>Digital Discharge Summary</span>
+              <span class="badge-ready">READY UPON DEPART</span>
+            </div>
+          </article>
+
+          <!-- Need Direct Assistance Card -->
+          <article class="card assistance-card">
+            <div class="assist-header">
+              <div class="assist-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <h4>Need Direct Assistance?</h4>
+              </div>
+              <span class="online-dot">●</span>
+            </div>
+            <p class="assist-desc">Desk A attendant is standing by to answer queue inquiries, provide physical assistance, or coordinate translation services.</p>
+
+            <div class="assist-actions-grid">
+              <button class="btn btn-call-attendant" type="button">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Call Attendant (x4901)
+              </button>
+              <button class="btn btn-copy-wifi" type="button">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                Copy Wi-Fi
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
