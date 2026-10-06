@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CalmWait - Temporary Leave System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global/global.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="page-index">
+
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <div class="brand-icon">✚</div>
+          <div class="brand-text">
+            <h1>CalmWait</h1>
+            <span>Patient Portal</span>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <a href="visit/visit.html" class="nav-item">Visit</a>
+          <a href="que/que.html" class="nav-item">Queue</a>
+          <a href="progress/progress.html" class="nav-item">Progress</a>
+          <a href="notification/notification.html" class="nav-item">Alerts</a>
+          <div class="nav-highlight-box">
+            <span class="nav-highlight-tag">Temporary Leave</span>
+            <p class="nav-highlight-title">Need coffee or fresh air?</p>
+          </div>
+                  <a href="index.html" class="nav-item">Temporary Leave</a>
+          <a href="login/login.html" class="nav-item">Patient Login</a>
+          <a href="pro/pro.html" class="nav-item">Patient Profile</a></nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="location-info">
+          <div class="loc-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Main Campus</span>
+          </div>
+          <p class="loc-sub">Level 1 • South Pavilion</p>
+        </div>
+        <a href="#" class="footer-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          Assistance &amp; FAQs
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- Top Utility / Desk Status Bar -->
+      <header class="utility-bar">
+        <div class="desk-indicator">
+          <span class="pulse-badge">
+            <span class="pulse-dot"></span>
+            Reception Desk A Online
+          </span>
+          <span class="desk-meta">• Wait times nominal (under 12m)</span>
+        </div>
+
+        <div class="account-actions">
+          <a href="login/login.html" class="btn btn-login">Login</a>
+          <button class="btn btn-support" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            Help / Attendant
+          </button>
+          <a href="pro/pro.html" class="profile-avatar" aria-label="Open patient profile">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </a>
+        </div>
+      </header>
+
+      <!-- Step Navigation & State Flow -->
+      <section class="flow-header">
+        <div class="flow-title-group">
+          <a href="que/que.html" class="btn btn-back">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to Queue
+          </a>
+          <div>
+            <h2>Step Out of Waiting Room</h2>
+            <p>CalmWait Temporary Leave System • CalmWait Clinic</p>
+          </div>
+        </div>
+
+        <div class="state-segmented-control" role="tablist">
+          <button class="state-tab active" role="tab" aria-selected="true">State A: Request Leave</button>
+          <button class="state-tab" role="tab" aria-selected="false">State B: Away (Held)</button>
+          <button class="state-tab" role="tab" aria-selected="false">State C: Rejoined</button>
+        </div>
+      </section>
+
+      <!-- Live Patient Status Banner -->
+      <section class="patient-status-strip">
+        <div class="patient-metadata">
+          <span class="token-pill">Token A-24</span>
+          <span class="patient-name">Aarav Shah</span>
+          <span class="meta-dot">•</span>
+          <span class="doctor-detail">Dr. Mehta (General Medicine, Room 3)</span>
+          <span class="meta-dot">•</span>
+          <span class="checkin-time">Checked-in: <strong>10:30 AM</strong></span>
+        </div>
+        <div class="estimated-time">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Est. turn: ~10:48 AM (in 18m)</span>
+        </div>
+      </section>
+
+      <!-- Main Columns Grid -->
+      <div class="content-columns">
+        
+        <!-- Left Column: Leave Selection & Confirmation -->
+        <section class="selection-column">
+          
+          <!-- Leave Configuration Card -->
+          <article class="card leave-card">
+            <span class="tag-overline">Patient Active Pass</span>
+            <h3 class="card-title">Step out for fresh air, coffee, or a walk</h3>
+            <p class="card-subtitle">Take a break without losing your place in line. Pick an estimated duration below to keep clinic pacing synchronized.</p>
+
+            <!-- Safe Window Banner -->
+            <div class="info-alert">
+              <div class="alert-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div class="alert-body">
+                <strong>Pacing Guarantee &amp; Safe Window</strong>
+                <p>Dr. Mehta is currently consulting <strong>Token A-20 (~8m left)</strong>. There are 3 patients ahead of you. You are in safe range for a temporary leave.</p>
+              </div>
+            </div>
+
+            <!-- Duration Selector -->
+            <div class="duration-section">
+              <label class="section-label">Select Leave Duration</label>
+              <div class="duration-options">
+                <button class="duration-option" type="button">
+                  <div class="duration-title-row">
+                    <span class="duration-time">10 min</span>
+                    <svg class="icon-subtle" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                  </div>
+                  <span class="duration-caption">Nearby garden / water</span>
+                </button>
+
+                <button class="duration-option active" type="button">
+                  <div class="duration-title-row">
+                    <span class="duration-time">20 min</span>
+                    <svg class="icon-subtle" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                  </div>
+                  <span class="duration-caption">Coffee shop / cafeteria</span>
+                </button>
+
+                <button class="duration-option" type="button">
+                  <div class="duration-title-row">
+                    <span class="duration-time">30 min</span>
+                    <svg class="icon-subtle" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 4v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                  </div>
+                  <span class="duration-caption">Campus walk / pharmacy</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Return Estimate Display -->
+            <div class="return-metrics-card">
+              <div class="timer-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              </div>
+              <div class="metric-block">
+                <span class="metric-caption">Target Return By</span>
+                <div class="return-clock">
+                  <h4>11:05 AM</h4>
+                  <small>approx.</small>
+                </div>
+              </div>
+              <div class="buffer-block">
+                <span class="buffer-title">Grace Hold Buffer</span>
+                <p class="buffer-time">Hold guaranteed until 11:20 AM</p>
+                <span class="buffer-tag">15 min buffer active</span>
+              </div>
+            </div>
+
+            <!-- SMS Alerts Bar -->
+            <div class="sms-card-row">
+              <div class="sms-icon-group">
+                <div class="phone-icon-wrap">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                </div>
+                <div class="sms-meta">
+                  <strong>Auto-SMS Alert Active</strong>
+                  <p>Syncing with +1 (•••) •••-4902</p>
+                </div>
+              </div>
+              <button class="btn btn-outline-sm" type="button">Cancel</button>
+            </div>
+          </article>
+
+          <!-- Confirmation Card -->
+          <article class="card confirmation-panel">
+            <div class="panel-header">
+              <div class="live-dot-tag">
+                <span class="teal-dot"></span>
+                <span>Leave Confirmation Preview</span>
+              </div>
+              <button class="icon-dismiss" aria-label="Close Preview" type="button">✕</button>
+            </div>
+
+            <div class="summary-list">
+              <div class="summary-item">
+                <span class="summary-key">Patient Name</span>
+                <span class="summary-val">Aarav Shah (Token A-24)</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Assigned Physician</span>
+                <span class="summary-val">Dr. Mehta • Room 3</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-key">Estimated Departure</span>
+                <span class="summary-val">10:45 AM (Immediate)</span>
+              </div>
+              <div class="summary-item highlight-item">
+                <span class="summary-key">Expected Return Doorway</span>
+                <span class="summary-val highlight">11:05 AM (South Pavilion Lounge)</span>
+              </div>
+            </div>
+
+            <p class="panel-disclaimer">
+              By stepping out, your spot remains preserved while patients A-21 through A-23 are seen. We will send an SMS chime 10 minutes before Dr. Mehta is ready.
+            </p>
+
+            <div class="panel-actions">
+              <button class="btn btn-secondary-action" type="button">Cancel</button>
+              <button class="btn btn-primary-action" type="button">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Confirm Step Out
+              </button>
+            </div>
+          </article>
+        </section>
+
+        <!-- Right Column: Hold Policy & Map Radius -->
+        <aside class="policy-column">
+          <div class="card policy-card">
+            
+            <div class="policy-top">
+              <span class="security-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                Protected Experience
+              </span>
+              <h3 class="policy-heading">CalmWait Hold Policy</h3>
+              <p class="policy-lead">Designed to eliminate waiting room anxiety while maintaining seamless ambulatory flow.</p>
+            </div>
+
+            <div class="policy-points">
+              <!-- Point 1 -->
+              <div class="point-item">
+                <div class="point-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="point-content">
+                  <h4>Place is preserved</h4>
+                  <p>You keep your place while you're away. Your queue position progresses normally with physician pace.</p>
+                </div>
+              </div>
+
+              <!-- Point 2 -->
+              <div class="point-item">
+                <div class="point-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                </div>
+                <div class="point-content">
+                  <h4>Proactive alerts</h4>
+                  <p>We'll alert you via SMS and app chime when 1 patient remains ahead, providing time to return to Room 3.</p>
+                </div>
+              </div>
+
+              <!-- Point 3 -->
+              <div class="point-item">
+                <div class="point-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                </div>
+                <div class="point-content">
+                  <h4>Grace buffer protection</h4>
+                  <p>If you're delayed past grace time, you simply move back 3 places. You are never removed from the queue.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Widget -->
+            <button class="accordion-header" type="button">
+              <span>Why do we do this?</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+
+            <!-- Map / Radius Card -->
+            <div class="leave-radius-widget">
+              <div class="widget-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Recommended Leave Radius</span>
+              </div>
+              <p class="widget-body">Stay within 500m of South Pavilion (Courtyard, Healing Garden, Ground Floor Cafe) to guarantee a prompt 5-minute walk back.</p>
+
+              <div class="mock-map">
+                <div class="map-badge">
+                  <span class="geo-pin"></span>
+                  <span>South Pavilion • Safe 500m Zone</span>
+                </div>
+                <span class="map-sub">Healing Garden • Cafe 1st Fl • Courtyard</span>
+              </div>
+            </div>
+
+            <!-- Footer Details -->
+            <div class="policy-bottom-row">
+              <span>Desk A Extension: <strong>x4901</strong></span>
+              <a href="#" class="wifi-link">Lounge WiFi FAQ</a>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
